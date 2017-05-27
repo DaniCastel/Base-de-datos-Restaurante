@@ -14,11 +14,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class cliMenu extends javax.swing.JFrame {
+public class gananciaPorMetodoPago extends javax.swing.JFrame {
     
 
     
-    public cliMenu() {
+    public gananciaPorMetodoPago() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -32,11 +32,11 @@ public class cliMenu extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(cliMenu.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(gananciaPorMetodoPago.class.getName()).log(Level.SEVERE, null, ex);
             }
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/entregafinalbd", "root", "ragnarok3798");
             Statement st = con.createStatement();
-            String sql = "Select * from menu";
+            String sql = "Select * from metodos_pago";
             ResultSet rstb = st.executeQuery(sql);
             ResultSetMetaData rsmd = rstb.getMetaData();
             int col = rsmd.getColumnCount();
@@ -54,7 +54,7 @@ public class cliMenu extends javax.swing.JFrame {
             menu.setModel(modelo);
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(cliMenu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(gananciaPorMetodoPago.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -65,9 +65,9 @@ public class cliMenu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         menu = new javax.swing.JTable();
-        consultar = new javax.swing.JButton();
-        sede = new java.awt.TextField();
         jLabel3 = new javax.swing.JLabel();
+        sede = new java.awt.TextField();
+        consultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu");
@@ -79,7 +79,7 @@ public class cliMenu extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Menu");
+        jLabel2.setText("Ganancias por metodo de pago");
 
         menu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,12 +94,9 @@ public class cliMenu extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(menu);
 
-        consultar.setText("Consultar");
-        consultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultarActionPerformed(evt);
-            }
-        });
+        jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Sede:");
 
         sede.setForeground(new java.awt.Color(102, 102, 255));
         sede.setText("Todas");
@@ -109,44 +106,48 @@ public class cliMenu extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Sede:");
+        consultar.setText("Consultar");
+        consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(173, 173, 173))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(308, 308, 308)
-                        .addComponent(jLabel2))
+                        .addGap(49, 49, 49)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
+                        .addGap(261, 261, 261)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(108, 108, 108)
+                        .addGap(41, 41, 41)
                         .addComponent(consultar)))
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(38, 38, 38)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(126, 126, 126)
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
                     .addComponent(sede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(consultar)
-                    .addComponent(jLabel3))
-                .addContainerGap(35, Short.MAX_VALUE))
+                    .addComponent(consultar))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -163,6 +164,10 @@ public class cliMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void sedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sedeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sedeActionPerformed
+
     private void consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarActionPerformed
         try {
             Connection con = null;
@@ -173,7 +178,7 @@ public class cliMenu extends javax.swing.JFrame {
             }
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/entregafinalbd", "root", "ragnarok3798");
             Statement st = con.createStatement();
-            String sql = "Select * from menu where (Sede = " + sede.getText() +") " ;
+            String sql = "Select * from metodos_pago where (fac_sed_id = " + sede.getText() +") " ;
             ResultSet rstb = st.executeQuery(sql);
             ResultSetMetaData rsmd = rstb.getMetaData();
             int col = rsmd.getColumnCount();
@@ -194,10 +199,6 @@ public class cliMenu extends javax.swing.JFrame {
             Logger.getLogger(cliMenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_consultarActionPerformed
-
-    private void sedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sedeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sedeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,7 +232,7 @@ public class cliMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cliMenu().setVisible(true);
+                new gananciaPorMetodoPago().setVisible(true);
             }
         });
     }
