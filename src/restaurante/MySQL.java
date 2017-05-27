@@ -28,7 +28,6 @@ public class MySQL {
             Logger.getLogger(MySQL.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
- 
     public void closeConnection() {
         try {
             Conexion.close();
