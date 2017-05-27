@@ -14,11 +14,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class cliMenu extends javax.swing.JFrame {
+public class menu extends javax.swing.JFrame {
     
 
     
-    public cliMenu() {
+    public menu() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -32,7 +32,7 @@ public class cliMenu extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(cliMenu.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
             }
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/entregafinalbd", "root", "ragnarok3798");
             Statement st = con.createStatement();
@@ -54,7 +54,7 @@ public class cliMenu extends javax.swing.JFrame {
             menu.setModel(modelo);
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(cliMenu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -169,7 +169,7 @@ public class cliMenu extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(cliMenu.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
             }
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/entregafinalbd", "root", "ragnarok3798");
             Statement st = con.createStatement();
@@ -191,7 +191,7 @@ public class cliMenu extends javax.swing.JFrame {
             menu.setModel(modelo);
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(cliMenu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_consultarActionPerformed
 
@@ -231,7 +231,7 @@ public class cliMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cliMenu().setVisible(true);
+                new menu().setVisible(true);
             }
         });
     }
