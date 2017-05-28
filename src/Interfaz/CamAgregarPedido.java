@@ -1,5 +1,6 @@
 
 package Interfaz;
+import static Interfaz.CamInicio.idCam;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -62,8 +63,13 @@ public class CamAgregarPedido extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jSaludo = new javax.swing.JLabel();
-        ja = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jFMesa = new javax.swing.JTextField();
+        jAgregarPedido = new javax.swing.JButton();
+        jSaludo1 = new javax.swing.JLabel();
+        jMesa = new javax.swing.JLabel();
+        jFPlato = new javax.swing.JTextField();
+        jFCantidad = new javax.swing.JTextField();
+        jPlato = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -76,50 +82,111 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         jSaludo.setForeground(new java.awt.Color(255, 255, 255));
         jSaludo.setText("Camarero");
 
-        ja.addActionListener(new java.awt.event.ActionListener() {
+        jFMesa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jaActionPerformed(evt);
+                jFMesaActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 153));
-        jButton1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Agregar Pedido");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jAgregarPedido.setBackground(new java.awt.Color(0, 153, 153));
+        jAgregarPedido.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        jAgregarPedido.setForeground(new java.awt.Color(255, 255, 255));
+        jAgregarPedido.setText("Agregar Pedido");
+        jAgregarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jAgregarPedidoActionPerformed(evt);
             }
         });
+
+        jSaludo1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jSaludo1.setForeground(new java.awt.Color(255, 255, 255));
+        jSaludo1.setText("Cantidad");
+
+        jMesa.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jMesa.setForeground(new java.awt.Color(255, 255, 255));
+        jMesa.setText("Mesa");
+
+        jFPlato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFPlatoActionPerformed(evt);
+            }
+        });
+
+        jFCantidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFCantidadActionPerformed(evt);
+            }
+        });
+
+        jPlato.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jPlato.setForeground(new java.awt.Color(255, 255, 255));
+        jPlato.setText("Plato");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(236, 236, 236)
-                .addComponent(jSaludo)
-                .addGap(222, 376, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(jSaludo))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addComponent(jFMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121)
+                        .addComponent(jFPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(177, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(ja, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(247, 247, 247)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jAgregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jFCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(288, 288, 288)
+                        .addComponent(jSaludo1)))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(134, 134, 134)
+                    .addComponent(jMesa)
+                    .addContainerGap(538, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(442, Short.MAX_VALUE)
+                    .addComponent(jPlato)
+                    .addGap(231, 231, 231)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jSaludo)
-                .addGap(88, 88, 88)
-                .addComponent(ja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jFMesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFPlato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(jSaludo1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jFCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(jAgregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(82, 82, 82))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(85, 85, 85)
+                    .addComponent(jMesa)
+                    .addContainerGap(282, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(96, 96, 96)
+                    .addComponent(jPlato)
+                    .addContainerGap(271, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,12 +203,18 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jaActionPerformed
+    private void jFMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFMesaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jaActionPerformed
+    }//GEN-LAST:event_jFMesaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+    private void jAgregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAgregarPedidoActionPerformed
+        String pla = jFPlato.getText();
+        String cant = jFCantidad.getText();
+        String mes = jFMesa.getText();
+
+        Integer plato=Integer.parseInt(pla);
+        Integer cantidad=Integer.parseInt(cant);
+        Integer mesa=Integer.parseInt(mes);
                 
              try {  
             // Creamos la conexion  
@@ -150,22 +223,27 @@ public class CamAgregarPedido extends javax.swing.JFrame {
             cStmt = MySQL.conn.prepareCall(" CALL proc_agregar_pedido(?,?,?,?) ");
             MySQL.conn.setAutoCommit(false);  
               
-             cStmt.setInt(1, 5);    
-             cStmt.setInt(2, 1);  
-             cStmt.setInt(3, 1);
-             cStmt.setInt(4, 1);
+             cStmt.setInt(1, mesa);    
+             cStmt.setInt(2, plato);  
+             cStmt.setInt(3, cantidad);
+             cStmt.setInt(4, CamInicio.idCam);
           
              cStmt.execute();     
-               
-          
-              
-          
+
         }catch (Exception e) {  
                      Logger.getLogger(CamAgregarPedido.class.getName()).log(Level.SEVERE, null, e);
 
         }
              
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jAgregarPedidoActionPerformed
+
+    private void jFPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFPlatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFPlatoActionPerformed
+
+    private void jFCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFCantidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFCantidadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,9 +283,14 @@ public class CamAgregarPedido extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jAgregarPedido;
+    private javax.swing.JTextField jFCantidad;
+    private javax.swing.JTextField jFMesa;
+    private javax.swing.JTextField jFPlato;
+    private javax.swing.JLabel jMesa;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jPlato;
     private javax.swing.JLabel jSaludo;
-    private javax.swing.JTextField ja;
+    private javax.swing.JLabel jSaludo1;
     // End of variables declaration//GEN-END:variables
 }
