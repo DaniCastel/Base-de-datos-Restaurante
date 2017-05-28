@@ -49,7 +49,7 @@ public class RecInicio extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Camarero");
+        jLabel2.setText("Recepcionista");
 
         jFCamId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +111,7 @@ public class RecInicio extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addComponent(jFCamId, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(246, 246, 246)
+                        .addGap(266, 266, 266)
                         .addComponent(jLabel2)))
                 .addGap(118, 272, Short.MAX_VALUE))
         );

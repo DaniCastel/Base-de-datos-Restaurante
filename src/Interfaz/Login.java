@@ -143,7 +143,27 @@ public class Login extends javax.swing.JFrame {
              CamInicio p= new CamInicio();
         p.setVisible(true);
         dispose();
-        }
+        }else if(usuario.equals("Admin_general")){
+            AdGeneralInicio p= new AdGeneralInicio();
+            p.setVisible(true);
+            dispose();
+        }else if(usuario.equals("Admin_Sede")){
+            AdSedeInicio p= new AdSedeInicio();
+            p.setVisible(true);
+            dispose();
+        }else if(usuario.equals("Recepcionista")){
+            RecInicio p= new RecInicio();
+            p.setVisible(true);
+            dispose();
+        }else if(usuario.equals("Cliente")){
+            menu p= new menu();
+            p.setVisible(true);
+            dispose();
+        }else if(usuario.equals("root")){
+           CamInicio p= new CamInicio();
+           p.setVisible(true);
+           dispose();
+         }
       
     
         

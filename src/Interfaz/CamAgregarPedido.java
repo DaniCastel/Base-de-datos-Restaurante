@@ -32,22 +32,9 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         jSaludo.setText("Camarero "+
                 CamInicio.idCam);
         
-        try {
-            String Query = "SELECT * FROM camarero" ;
-            Statement st = conn.createStatement();
-            java.sql.ResultSet resultSet;
-            resultSet = st.executeQuery(Query);
- 
-            while (resultSet.next()) {
-                //System.out.println("ID: " + resultSet.getString("ID") + " "
-                  //      + "Nombre: " + resultSet.getString("Nombre") + " " + resultSet.getString("Apellido") + " "
-                    //    + "Edad: " + resultSet.getString("Edad") + " "
-                      //  + "Sexo: " + resultSet.getString("Sexo"));
-            }
- 
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error en la adquisición de datos");
-        }
+        ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
+        Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(20,20,10));
+        jBotonVolver.setIcon(icono);
 
         
         
@@ -70,6 +57,7 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         jFPlato = new javax.swing.JTextField();
         jFCantidad = new javax.swing.JTextField();
         jPlato = new javax.swing.JLabel();
+        jBotonVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -122,6 +110,19 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         jPlato.setForeground(new java.awt.Color(255, 255, 255));
         jPlato.setText("Plato");
 
+        jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
+        jBotonVolver.setBorder(null);
+        jBotonVolver.setBorderPainted(false);
+        jBotonVolver.setContentAreaFilled(false);
+        jBotonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBotonVolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBotonVolver.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jBotonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -133,7 +134,9 @@ public class CamAgregarPedido extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(236, 236, 236)
+                        .addGap(31, 31, 31)
+                        .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(175, 175, 175)
                         .addComponent(jSaludo))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(90, 90, 90)
@@ -163,7 +166,9 @@ public class CamAgregarPedido extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jSaludo)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSaludo)
+                    .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(jPlato)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,6 +248,12 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jFCantidadActionPerformed
 
+    private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
+        CamInicio obj =new CamInicio();
+        obj.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jBotonVolverActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -282,6 +293,7 @@ public class CamAgregarPedido extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jAgregarPedido;
+    private javax.swing.JButton jBotonVolver;
     private javax.swing.JTextField jFCantidad;
     private javax.swing.JTextField jFMesa;
     private javax.swing.JTextField jFPlato;
