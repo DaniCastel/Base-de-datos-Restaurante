@@ -14,11 +14,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class propinaCamarero extends javax.swing.JFrame {
+public class AplatoMenosVendido extends javax.swing.JFrame {
     
 
     
-    public propinaCamarero() {
+    public AplatoMenosVendido() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -28,15 +28,15 @@ public class propinaCamarero extends javax.swing.JFrame {
     
     public void imprimirMenu(){
         try {
-   
+       
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(propinaCamarero.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AplatoMenosVendido.class.getName()).log(Level.SEVERE, null, ex);
             }
-     
+
             Statement st = MySQL.conn.createStatement();
-            String sql = "Select * from propina_camarero";
+            String sql = "Select * from menos_vendido";
             ResultSet rstb = st.executeQuery(sql);
             ResultSetMetaData rsmd = rstb.getMetaData();
             int col = rsmd.getColumnCount();
@@ -54,7 +54,7 @@ public class propinaCamarero extends javax.swing.JFrame {
             menu.setModel(modelo);
 
         } catch (SQLException ex) {
-            Logger.getLogger(propinaCamarero.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AplatoMenosVendido.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -76,7 +76,7 @@ public class propinaCamarero extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Propinas: Camareros");
+        jLabel2.setText("Plato menos vendido en todas las sedes");
 
         menu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -96,14 +96,13 @@ public class propinaCamarero extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(236, 236, 236)
-                        .addComponent(jLabel2)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(95, 95, 95))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,8 +110,8 @@ public class propinaCamarero extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(46, 46, 46)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(317, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -161,7 +160,7 @@ public class propinaCamarero extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new propinaCamarero().setVisible(true);
+                new AplatoMenosVendido().setVisible(true);
             }
         });
     }

@@ -18,9 +18,9 @@ import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 import static restaurante.MySQL.conn;
 
-public class propinasDelDiaCam extends javax.swing.JFrame {
+public class CamPropinaslDia extends javax.swing.JFrame {
 
-    public propinasDelDiaCam() {
+    public CamPropinaslDia() {
 
         initComponents();
         setLocationRelativeTo(null);
@@ -227,7 +227,7 @@ public class propinasDelDiaCam extends javax.swing.JFrame {
             cStmt.close();
             conec.close();
         } catch (Exception e) {
-            Logger.getLogger(propinasDelDiaCam.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(CamPropinaslDia.class.getName()).log(Level.SEVERE, null, e);
 
         }
 
@@ -270,7 +270,7 @@ public class propinasDelDiaCam extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new propinasDelDiaCam().setVisible(true);
+                new CamPropinaslDia().setVisible(true);
             }
         });
     }

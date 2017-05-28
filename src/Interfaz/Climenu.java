@@ -14,11 +14,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class menu extends javax.swing.JFrame {
+public class Climenu extends javax.swing.JFrame {
     
 
     
-    public menu() {
+    public Climenu() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -38,7 +38,7 @@ public class menu extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
             }
     
             Statement st = MySQL.conn.createStatement();
@@ -60,7 +60,7 @@ public class menu extends javax.swing.JFrame {
             menu.setModel(modelo);
 
         } catch (SQLException ex) {
-            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -165,7 +165,7 @@ public class menu extends javax.swing.JFrame {
         try {
             MySQL.conn.close();
         } catch (SQLException ex) {
-            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
@@ -201,7 +201,7 @@ public class menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new menu().setVisible(true);
+                new Climenu().setVisible(true);
             }
         });
     }

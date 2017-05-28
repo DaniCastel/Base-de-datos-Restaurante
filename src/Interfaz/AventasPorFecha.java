@@ -17,11 +17,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class ventasPorFecha extends javax.swing.JFrame {
+public class AventasPorFecha extends javax.swing.JFrame {
     
 
     
-    public ventasPorFecha() {
+    public AventasPorFecha() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -35,7 +35,7 @@ public class ventasPorFecha extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ventasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AventasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
             }
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/entregafinalbd", "root", "ragnarok3798");
             PreparedStatement st = con.prepareStatement("select contarVentaPorFecha("+date+")");
@@ -44,7 +44,7 @@ public class ventasPorFecha extends javax.swing.JFrame {
             numero = resultado.getInt(1);
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(ventasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AventasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
         }
         return numero;
     }
@@ -195,7 +195,7 @@ public class ventasPorFecha extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ventasPorFecha().setVisible(true);
+                new AventasPorFecha().setVisible(true);
             }
         });
     }

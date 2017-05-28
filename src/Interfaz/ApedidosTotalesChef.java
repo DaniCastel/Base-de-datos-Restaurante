@@ -14,11 +14,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class pedidosTotalesChef extends javax.swing.JFrame {
+public class ApedidosTotalesChef extends javax.swing.JFrame {
     
 
     
-    public pedidosTotalesChef() {
+    public ApedidosTotalesChef() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -32,7 +32,7 @@ public class pedidosTotalesChef extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(pedidosTotalesChef.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ApedidosTotalesChef.class.getName()).log(Level.SEVERE, null, ex);
             }
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/entregafinalbd", "root", "ragnarok3798");
             Statement st = con.createStatement();
@@ -54,7 +54,7 @@ public class pedidosTotalesChef extends javax.swing.JFrame {
             menu.setModel(modelo);
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(pedidosTotalesChef.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ApedidosTotalesChef.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -96,23 +96,22 @@ public class pedidosTotalesChef extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(262, 262, 262)
-                        .addComponent(jLabel2)))
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(51, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(262, 262, 262))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(39, 39, 39)
                 .addComponent(jLabel2)
-                .addGap(46, 46, 46)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -161,7 +160,7 @@ public class pedidosTotalesChef extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new pedidosTotalesChef().setVisible(true);
+                new ApedidosTotalesChef().setVisible(true);
             }
         });
     }

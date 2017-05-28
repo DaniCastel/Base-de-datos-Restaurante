@@ -174,7 +174,7 @@ public class gananciaPorMetodoPago extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
             }
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/entregafinalbd", "root", "ragnarok3798");
             Statement st = con.createStatement();
@@ -196,7 +196,7 @@ public class gananciaPorMetodoPago extends javax.swing.JFrame {
             menu.setModel(modelo);
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_consultarActionPerformed
 

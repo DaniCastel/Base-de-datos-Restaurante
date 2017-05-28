@@ -32,7 +32,7 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         jSaludo.setText("Camarero "+
                 CamInicio.idCam);
         
-        ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
+        ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(20,20,10));
         jBotonVolver.setIcon(icono);
 

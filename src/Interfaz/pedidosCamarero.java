@@ -33,7 +33,7 @@ public class pedidosCamarero extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(pedidosTotalesChef.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ApedidosTotalesChef.class.getName()).log(Level.SEVERE, null, ex);
             }
            
             Statement st = MySQL.conn.createStatement();
@@ -58,7 +58,7 @@ public class pedidosCamarero extends javax.swing.JFrame {
             menu.setModel(modelo);
 
         } catch (SQLException ex) {
-            Logger.getLogger(camareroMayorPropina.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AGcamareroMayorPropina.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -165,7 +165,7 @@ public class pedidosCamarero extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new camareroMayorPropina().setVisible(true);
+                new AGcamareroMayorPropina().setVisible(true);
             }
         });
     }
