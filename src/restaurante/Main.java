@@ -18,6 +18,7 @@ public class Main {
      * @param args the command line arguments
      */
      public static MySQL db = new MySQL();
+     public static Integer sedeid=1;
         
     public static void main(String[] args) {
        Login p= new Login();
