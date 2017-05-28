@@ -67,6 +67,7 @@ public class AGInicio extends javax.swing.JFrame {
         jChefMayorPropina = new javax.swing.JButton();
         jPropinasChef = new javax.swing.JButton();
         jAdminGral1 = new javax.swing.JLabel();
+        jBGananciaPromedio = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -194,6 +195,16 @@ public class AGInicio extends javax.swing.JFrame {
         jAdminGral1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jAdminGral1.setText("Propinas");
 
+        jBGananciaPromedio.setBackground(new java.awt.Color(0, 102, 102));
+        jBGananciaPromedio.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jBGananciaPromedio.setForeground(new java.awt.Color(255, 255, 255));
+        jBGananciaPromedio.setText("Ganancia promedio");
+        jBGananciaPromedio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBGananciaPromedioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPAdminGeneralLayout = new javax.swing.GroupLayout(jPAdminGeneral);
         jPAdminGeneral.setLayout(jPAdminGeneralLayout);
         jPAdminGeneralLayout.setHorizontalGroup(
@@ -210,14 +221,22 @@ public class AGInicio extends javax.swing.JFrame {
                         .addContainerGap(217, Short.MAX_VALUE))
                     .addGroup(jPAdminGeneralLayout.createSequentialGroup()
                         .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jChefMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCamMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPAdminGeneralLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jChefMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jCamMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPAdminGeneralLayout.createSequentialGroup()
                                 .addGap(31, 31, 31)
-                                .addComponent(jBComprasFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPropinasChef, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
+                                        .addComponent(jBComprasFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jPropinasChef, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
+                                        .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(45, 45, 45))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPAdminGeneralLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -246,7 +265,9 @@ public class AGInicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(jCamMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52))
         );
 
@@ -305,6 +326,12 @@ public class AGInicio extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jPropinasChefActionPerformed
 
+    private void jBGananciaPromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGananciaPromedioActionPerformed
+        AgananciaPromPFecha p= new AgananciaPromPFecha();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jBGananciaPromedioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -346,6 +373,7 @@ public class AGInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jAdminGral;
     private javax.swing.JLabel jAdminGral1;
     private javax.swing.JButton jBComprasFecha;
+    private javax.swing.JButton jBGananciaPromedio;
     private javax.swing.JButton jBotonVolver;
     private javax.swing.JButton jCamMayorPropina;
     private javax.swing.JButton jChefMayorPropina;
