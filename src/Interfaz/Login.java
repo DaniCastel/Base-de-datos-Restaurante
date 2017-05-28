@@ -157,7 +157,7 @@ public class Login extends javax.swing.JFrame {
         
         System.out.println(usuario);
         System.out.println(contrasena);
-        Main.db.MySQLConnection(usuario, contrasena, "restaurante");
+        Main.db.MySQLConnection(usuario, contrasena, "entregafinalbd");
         
         if(usuario.equals("Camarero")){
              CamInicio p= new CamInicio();
