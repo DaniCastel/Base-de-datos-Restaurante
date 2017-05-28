@@ -28,14 +28,14 @@ public class insumoMenosGastado extends javax.swing.JFrame {
     
     public void imprimirMenu(){
         try {
-            Connection con = null;
+
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(insumoMenosGastado.class.getName()).log(Level.SEVERE, null, ex);
             }
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/entregafinalbd", "root", "ragnarok3798");
-            Statement st = con.createStatement();
+
+            Statement st = MySQL.conn.createStatement();
             String sql = "Select * from ins_menos_gastado";
             ResultSet rstb = st.executeQuery(sql);
             ResultSetMetaData rsmd = rstb.getMetaData();
@@ -52,7 +52,7 @@ public class insumoMenosGastado extends javax.swing.JFrame {
                 modelo.addRow(fila);
             }
             menu.setModel(modelo);
-            con.close();
+
         } catch (SQLException ex) {
             Logger.getLogger(insumoMenosGastado.class.getName()).log(Level.SEVERE, null, ex);
         }

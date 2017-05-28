@@ -137,9 +137,18 @@ public class Login extends javax.swing.JFrame {
         String contrasena = jContraField.getText();
         System.out.println(usuario);
         System.out.println(contrasena);
+        Main.db.MySQLConnection(usuario, contrasena, "restaurante");
         
-        Main.db.MySQLConnection(usuario, contrasena, "");
-
+        if(usuario.equals("Camarero")){
+             CamInicio p= new CamInicio();
+        p.setVisible(true);
+        dispose();
+        }
+      
+    
+        
+        
+        
        
     }//GEN-LAST:event_IngresarActionPerformed
 

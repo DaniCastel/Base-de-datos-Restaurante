@@ -1,5 +1,6 @@
 
 package Interfaz;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -14,30 +15,33 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class propinaCamarero extends javax.swing.JFrame {
+public class propinasDiaCam extends javax.swing.JFrame {
     
 
     
-    public propinaCamarero() {
+    public propinasDiaCam() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Propinas del día");
         imprimirMenu();
     }
     
     public void imprimirMenu(){
         try {
-   
+
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(propinaCamarero.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(pedidosTotalesChef.class.getName()).log(Level.SEVERE, null, ex);
             }
-     
+           
             Statement st = MySQL.conn.createStatement();
-            String sql = "Select * from propina_camarero";
+
+            String sql = "CALL pc_propinas_dia_cam("+CamInicio.idCam+")";
+            
             ResultSet rstb = st.executeQuery(sql);
+            
             ResultSetMetaData rsmd = rstb.getMetaData();
             int col = rsmd.getColumnCount();
             DefaultTableModel modelo = new DefaultTableModel();
@@ -54,7 +58,7 @@ public class propinaCamarero extends javax.swing.JFrame {
             menu.setModel(modelo);
 
         } catch (SQLException ex) {
-            Logger.getLogger(propinaCamarero.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(camareroMayorPropina.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -76,7 +80,7 @@ public class propinaCamarero extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Propinas: Camareros");
+        jLabel2.setText("Mis propinas del día");
 
         menu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -96,23 +100,22 @@ public class propinaCamarero extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(236, 236, 236)
-                        .addComponent(jLabel2)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(232, 232, 232))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(26, 26, 26)
                 .addComponent(jLabel2)
-                .addGap(46, 46, 46)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(269, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -161,7 +164,7 @@ public class propinaCamarero extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new propinaCamarero().setVisible(true);
+                new camareroMayorPropina().setVisible(true);
             }
         });
     }
