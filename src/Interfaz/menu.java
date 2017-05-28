@@ -162,6 +162,11 @@ public class menu extends javax.swing.JFrame {
         Login obj =new Login();
         obj.setVisible(true);
         dispose();
+        try {
+            MySQL.conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
     /**
