@@ -1,5 +1,5 @@
-
 package Interfaz;
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,35 +18,32 @@ import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
 public class AgananciaPromPFecha extends javax.swing.JFrame {
-    
 
-    
     public AgananciaPromPFecha() {
         initComponents();
-        setLocationRelativeTo(null); 
+        setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Login");
-        
-        
+
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
-        Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
+        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(30, 30, 20));
         jBotonVolver.setIcon(icono);
-        
-        Imagen1 Imagen = new Imagen1(740,420);
+
+        Imagen1 Imagen = new Imagen1(740, 420);
         jPanel1.add(Imagen);
         jPanel1.repaint();
     }
-    
-    public Integer llamar(String date){
+
+    public Integer llamar(String date) {
         int numero = 0;
         try {
- 
+
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(AgananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
             }
-            PreparedStatement st = MySQL.conn.prepareStatement("select promedioGananciaPorDia("+date+")");
+            PreparedStatement st = MySQL.conn.prepareStatement("select promedioGananciaPorDia(" + date + ")");
             ResultSet resultado = st.executeQuery();
             resultado.next();
             numero = resultado.getInt(1);
@@ -55,6 +52,7 @@ public class AgananciaPromPFecha extends javax.swing.JFrame {
         }
         return numero;
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -195,12 +193,12 @@ public class AgananciaPromPFecha extends javax.swing.JFrame {
     }//GEN-LAST:event_inputFechaActionPerformed
 
     private void botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActionPerformed
-        String fecha = "'"+inputFecha.getText()+"'";
+        String fecha = "'" + inputFecha.getText() + "'";
         resultado.setText(llamar(fecha).toString());
     }//GEN-LAST:event_botonActionPerformed
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        AGInicio obj =new AGInicio();
+        AGInicio obj = new AGInicio();
         obj.setVisible(true);
         dispose();
 
@@ -210,8 +208,7 @@ public class AgananciaPromPFecha extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-           
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 import restaurante.*;
 
 public class Login extends javax.swing.JFrame {
-
+    
 
     
     public Login() {
@@ -158,7 +158,7 @@ public class Login extends javax.swing.JFrame {
             p.setVisible(true);
             dispose();
         }else if(usuario.equals("Admin_Sede")){
-            AGInicio p= new AGInicio();
+            ASInicio p= new ASInicio();
             p.setVisible(true);
             dispose();
         }else if(usuario.equals("Recepcionista")){
