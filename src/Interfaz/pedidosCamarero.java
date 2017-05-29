@@ -33,7 +33,7 @@ public class pedidosCamarero extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ApedidosTotalesChef.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(pedidosTotalesChef.class.getName()).log(Level.SEVERE, null, ex);
             }
            
             Statement st = MySQL.conn.createStatement();

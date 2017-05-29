@@ -32,10 +32,18 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         jSaludo.setText("Camarero "+
                 CamInicio.idCam);
         
+        jFMesa.setHorizontalAlignment( jFMesa.CENTER);
+        jFPlato.setHorizontalAlignment( jFPlato.CENTER);
+        jFCantidad.setHorizontalAlignment( jFCantidad.CENTER);
+        
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver.png"));
-        Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(20,20,10));
+        Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
         jBotonVolver.setIcon(icono);
-
+        
+       
+        Imagen2 Imagen = new Imagen2(740,420);
+        jPanel1.add(Imagen);
+        jPanel1.repaint();
         
         
         
@@ -58,11 +66,12 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         jFCantidad = new javax.swing.JTextField();
         jPlato = new javax.swing.JLabel();
         jBotonVolver = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
@@ -70,13 +79,14 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         jSaludo.setForeground(new java.awt.Color(255, 255, 255));
         jSaludo.setText("Camarero");
 
+        jFMesa.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
         jFMesa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFMesaActionPerformed(evt);
             }
         });
 
-        jAgregarPedido.setBackground(new java.awt.Color(0, 153, 153));
+        jAgregarPedido.setBackground(new java.awt.Color(51, 51, 51));
         jAgregarPedido.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         jAgregarPedido.setForeground(new java.awt.Color(255, 255, 255));
         jAgregarPedido.setText("Agregar Pedido");
@@ -94,12 +104,14 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         jMesa.setForeground(new java.awt.Color(255, 255, 255));
         jMesa.setText("Mesa");
 
+        jFPlato.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
         jFPlato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFPlatoActionPerformed(evt);
             }
         });
 
+        jFCantidad.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 24)); // NOI18N
         jFCantidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFCantidadActionPerformed(evt);
@@ -116,6 +128,7 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         jBotonVolver.setContentAreaFilled(false);
         jBotonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBotonVolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBotonVolver.setIconTextGap(6);
         jBotonVolver.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jBotonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,25 +136,20 @@ public class CamAgregarPedido extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Volver");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(jFMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(jMesa)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jFPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPlato)
-                        .addGap(61, 61, 61)))
-                .addGap(106, 106, 106))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(158, 158, 158)
+                .addComponent(jMesa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPlato)
+                .addGap(158, 158, 158))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -149,36 +157,46 @@ public class CamAgregarPedido extends javax.swing.JFrame {
                         .addComponent(jFCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(270, 270, 270)
-                        .addComponent(jAgregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jAgregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(305, 305, 305)
-                        .addComponent(jSaludo1))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(232, 232, 232)
+                        .addComponent(jSaludo))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(204, 204, 204)
-                        .addComponent(jSaludo)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(109, 109, 109)
+                        .addComponent(jFMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jSaludo1))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(175, 175, 175)
+                                .addComponent(jFPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSaludo)
-                    .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel1)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(16, 16, 16))))
+                .addGap(10, 10, 10)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPlato)
                     .addComponent(jMesa))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFMesa, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addComponent(jFPlato, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jFMesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jFPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSaludo1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jFCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -195,56 +213,69 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jFMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFMesaActionPerformed
+    private void jFCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFCantidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFMesaActionPerformed
-
-    private void jAgregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAgregarPedidoActionPerformed
-        String pla = jFPlato.getText();
-        String cant = jFCantidad.getText();
-        String mes = jFMesa.getText();
-
-        Integer plato=Integer.parseInt(pla);
-        Integer cantidad=Integer.parseInt(cant);
-        Integer mesa=Integer.parseInt(mes);
-                
-             try {  
-            // Creamos la conexion  
-            CallableStatement cStmt;
-      
-            cStmt = MySQL.conn.prepareCall(" CALL proc_agregar_pedido(?,?,?,?) ");
-            MySQL.conn.setAutoCommit(false);  
-              
-             cStmt.setInt(1, mesa);    
-             cStmt.setInt(2, plato);  
-             cStmt.setInt(3, cantidad);
-             cStmt.setInt(4, CamInicio.idCam);
-          
-             cStmt.execute();     
-
-        }catch (Exception e) {  
-                     Logger.getLogger(CamAgregarPedido.class.getName()).log(Level.SEVERE, null, e);
-
-        }
-             
-    }//GEN-LAST:event_jAgregarPedidoActionPerformed
+    }//GEN-LAST:event_jFCantidadActionPerformed
 
     private void jFPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFPlatoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFPlatoActionPerformed
 
-    private void jFCantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFCantidadActionPerformed
+    private void jAgregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAgregarPedidoActionPerformed
+
+        try{
+
+            int plato=Integer.parseInt(jFPlato.getText());
+            int cantidad=Integer.parseInt(jFCantidad.getText());
+            int mesa=Integer.parseInt(jFMesa.getText());
+
+            try {
+                // Creamos la conexion
+                CallableStatement cStmt;
+                Class.forName("com.mysql.jdbc.Driver");
+
+                cStmt = MySQL.conn.prepareCall("{call proc_agregar_pedido(?,?,?,?)}");
+                MySQL.conn.setAutoCommit(true);
+
+                cStmt.setInt(1, mesa);
+                cStmt.setInt(2, plato);
+                cStmt.setInt(3, cantidad);
+                cStmt.setInt(4, CamInicio.idCam);
+
+                cStmt.execute();
+
+                cStmt.close();
+
+                WPedidoAgregado obj =new WPedidoAgregado();
+                obj.setVisible(true);
+
+            } catch (Exception e) {
+
+                WPedidoNOAgregado obj =new WPedidoNOAgregado();
+                obj.setVisible(true);
+
+            }
+
+        }catch (Exception e){
+            WIngresaDatos obj =new WIngresaDatos();
+            obj.setVisible(true);
+            System.out.println("error");
+        }
+
+    }//GEN-LAST:event_jAgregarPedidoActionPerformed
+
+    private void jFMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFMesaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFCantidadActionPerformed
+    }//GEN-LAST:event_jFMesaActionPerformed
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        CamInicio obj =new CamInicio();
+        CamInicio obj =new  CamInicio();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBotonVolverActionPerformed
@@ -292,6 +323,7 @@ public class CamAgregarPedido extends javax.swing.JFrame {
     private javax.swing.JTextField jFCantidad;
     private javax.swing.JTextField jFMesa;
     private javax.swing.JTextField jFPlato;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jMesa;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jPlato;

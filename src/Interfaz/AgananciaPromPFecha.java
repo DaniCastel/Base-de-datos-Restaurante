@@ -40,18 +40,16 @@ public class AgananciaPromPFecha extends javax.swing.JFrame {
     public Integer llamar(String date){
         int numero = 0;
         try {
-            Connection con = null;
+ 
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(AgananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
             }
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/entregafinalbd", "root", "ragnarok3798");
-            PreparedStatement st = con.prepareStatement("select promedioGananciaPorDia("+date+")");
+            PreparedStatement st = MySQL.conn.prepareStatement("select promedioGananciaPorDia("+date+")");
             ResultSet resultado = st.executeQuery();
             resultado.next();
             numero = resultado.getInt(1);
-            con.close();
         } catch (SQLException ex) {
             Logger.getLogger(AgananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
         }

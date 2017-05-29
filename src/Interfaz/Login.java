@@ -141,12 +141,14 @@ public class Login extends javax.swing.JFrame {
     private void IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarActionPerformed
         String usuario = jUsuarioField.getText();
         String contrasena = jContraField.getText();
-        
+        Main.sesion=usuario;
         
         System.out.println(usuario);
         System.out.println(contrasena);
-        Main.db.MySQLConnection(usuario, contrasena, "restaurante");
         
+        try{
+              Main.db.MySQLConnection(usuario, contrasena, "restaurante");
+
         if(usuario.equals("Camarero")){
              CamInicio p= new CamInicio();
         p.setVisible(true);
@@ -156,7 +158,7 @@ public class Login extends javax.swing.JFrame {
             p.setVisible(true);
             dispose();
         }else if(usuario.equals("Admin_Sede")){
-            ASInicio p= new ASInicio();
+            AGInicio p= new AGInicio();
             p.setVisible(true);
             dispose();
         }else if(usuario.equals("Recepcionista")){
@@ -167,11 +169,20 @@ public class Login extends javax.swing.JFrame {
             Climenu p= new Climenu();
             p.setVisible(true);
             dispose();
-        }else if(usuario.equals("root")){
-           CamInicio p= new CamInicio();
+        }else if(usuario.equals("Chef")){
+           ChefInicio p= new ChefInicio();
            p.setVisible(true);
            dispose();
          }
+        
+        
+        
+        }catch(Exception e){
+           WUsuarioInvalido p= new WUsuarioInvalido();
+           p.setVisible(true);
+        
+        }
+      
       
     
         

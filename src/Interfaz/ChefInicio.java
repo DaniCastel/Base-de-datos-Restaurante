@@ -14,12 +14,12 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class CamInicio extends javax.swing.JFrame {
+public class ChefInicio extends javax.swing.JFrame {
 
 
-    public static Integer idCam=1 ;
+    public static Integer idChef=14 ;
     
-    public CamInicio() {
+    public ChefInicio() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -28,7 +28,7 @@ public class CamInicio extends javax.swing.JFrame {
          ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonSalir.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
         jBotonVolver.setIcon(icono);
-        jFCamId.setHorizontalAlignment( jFCamId.CENTER);
+        jFChefId.setHorizontalAlignment( jFChefId.CENTER);
        
         Imagen2 Imagen = new Imagen2(740,420);
         jPanel1.add(Imagen);
@@ -42,11 +42,10 @@ public class CamInicio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jFCamId = new javax.swing.JTextField();
+        jFChefId = new javax.swing.JTextField();
         jCamID = new javax.swing.JLabel();
         jBMisPropinas = new javax.swing.JButton();
-        jBAgregarPedido = new javax.swing.JButton();
-        jBEntregarPedido = new javax.swing.JButton();
+        jBEnviarPedido = new javax.swing.JButton();
         jBotonVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -59,12 +58,12 @@ public class CamInicio extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Camarero");
+        jLabel2.setText("Chef");
 
-        jFCamId.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jFCamId.addActionListener(new java.awt.event.ActionListener() {
+        jFChefId.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jFChefId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFCamIdActionPerformed(evt);
+                jFChefIdActionPerformed(evt);
             }
         });
 
@@ -83,25 +82,14 @@ public class CamInicio extends javax.swing.JFrame {
             }
         });
 
-        jBAgregarPedido.setBackground(new java.awt.Color(51, 51, 51));
-        jBAgregarPedido.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        jBAgregarPedido.setForeground(new java.awt.Color(255, 255, 255));
-        jBAgregarPedido.setText("Agregar Pedido");
-        jBAgregarPedido.setBorderPainted(false);
-        jBAgregarPedido.addActionListener(new java.awt.event.ActionListener() {
+        jBEnviarPedido.setBackground(new java.awt.Color(51, 51, 51));
+        jBEnviarPedido.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        jBEnviarPedido.setForeground(new java.awt.Color(255, 255, 255));
+        jBEnviarPedido.setText("Enviar Pedido");
+        jBEnviarPedido.setBorderPainted(false);
+        jBEnviarPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBAgregarPedidoActionPerformed(evt);
-            }
-        });
-
-        jBEntregarPedido.setBackground(new java.awt.Color(51, 51, 51));
-        jBEntregarPedido.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        jBEntregarPedido.setForeground(new java.awt.Color(255, 255, 255));
-        jBEntregarPedido.setText("Entregar Pedido");
-        jBEntregarPedido.setBorderPainted(false);
-        jBEntregarPedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBEntregarPedidoActionPerformed(evt);
+                jBEnviarPedidoActionPerformed(evt);
             }
         });
 
@@ -134,23 +122,20 @@ public class CamInicio extends javax.swing.JFrame {
                         .addGap(230, 230, 230)
                         .addComponent(jCamID, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jFCamId, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jFChefId, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(215, 215, 215)
-                        .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(67, Short.MAX_VALUE)
-                .addComponent(jBAgregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jBEntregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jBMisPropinas, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72))
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addComponent(jBEnviarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(95, 95, 95)
+                        .addComponent(jBMisPropinas, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(142, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,16 +150,15 @@ public class CamInicio extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addComponent(jFCamId, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jFChefId, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                         .addComponent(jCamID, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(63, 63, 63)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jBAgregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jBMisPropinas, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBEntregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jBEnviarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(159, 159, 159))))
         );
 
@@ -192,14 +176,14 @@ public class CamInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jFCamIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFCamIdActionPerformed
+    private void jFChefIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFChefIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFCamIdActionPerformed
+    }//GEN-LAST:event_jFChefIdActionPerformed
 
     private void jBMisPropinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMisPropinasActionPerformed
          try{
-            idCam = Integer.parseInt(jFCamId.getText());
-        CamPropinaslDia p= new CamPropinaslDia();
+            idChef = Integer.parseInt(jFChefId.getText());
+        ChefPropinaslDia p= new ChefPropinaslDia();
         p.setVisible(true);
         dispose();
         }catch(Exception e){
@@ -212,25 +196,10 @@ public class CamInicio extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jBMisPropinasActionPerformed
 
-    private void jBAgregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarPedidoActionPerformed
-        
-        try{
-            idCam = Integer.parseInt(jFCamId.getText());
-            CamAgregarPedido p= new CamAgregarPedido();
-            p.setVisible(true);
-            dispose();
-        }catch(Exception e){
-             WIngresaID p= new WIngresaID();
-            p.setVisible(true);
-           
-        }
-        
-    }//GEN-LAST:event_jBAgregarPedidoActionPerformed
-
-    private void jBEntregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEntregarPedidoActionPerformed
+    private void jBEnviarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEnviarPedidoActionPerformed
          try{
-           idCam = Integer.parseInt(jFCamId.getText());
-        CamPedidosPendientes p= new CamPedidosPendientes();
+           idChef = Integer.parseInt(jFChefId.getText());
+        ChefPedidosPendientes p= new ChefPedidosPendientes();
         p.setVisible(true);
         dispose();
         }catch(Exception e){
@@ -241,7 +210,7 @@ public class CamInicio extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_jBEntregarPedidoActionPerformed
+    }//GEN-LAST:event_jBEnviarPedidoActionPerformed
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
         Login obj =new Login();
@@ -286,18 +255,17 @@ public class CamInicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CamInicio().setVisible(true);
+                new ChefInicio().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBAgregarPedido;
-    private javax.swing.JButton jBEntregarPedido;
+    private javax.swing.JButton jBEnviarPedido;
     private javax.swing.JButton jBMisPropinas;
     private javax.swing.JButton jBotonVolver;
     private javax.swing.JLabel jCamID;
-    private javax.swing.JTextField jFCamId;
+    private javax.swing.JTextField jFChefId;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

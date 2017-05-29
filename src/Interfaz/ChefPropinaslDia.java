@@ -18,17 +18,56 @@ import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 import static restaurante.MySQL.conn;
 
-public class entregarPedido extends javax.swing.JFrame {
+public class ChefPropinaslDia extends javax.swing.JFrame {
 
-    public entregarPedido() {
+    public ChefPropinaslDia() {
 
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
 
-        ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
+        ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver.png"));
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(20, 20, 10));
         jBotonVolver.setIcon(icono);
+        
+        Imagen2 Imagen = new Imagen2(740,420);
+        jPanel1.add(Imagen);
+        jPanel1.repaint();
+        
+         try {
+            // Creamos la conexion  
+            CallableStatement cStmt;
+            Class.forName("com.mysql.jdbc.Driver");
+           
+            cStmt = MySQL.conn.prepareCall("{call pc_propinas_dia_chef(?)}");
+            MySQL.conn.setAutoCommit(true);
+
+            cStmt.setInt(1, ChefInicio.idChef);
+
+            cStmt.execute();
+            ResultSet rstb = cStmt.getResultSet();
+            ResultSetMetaData rsmd = rstb.getMetaData();
+            int col = rsmd.getColumnCount();
+            DefaultTableModel modelo = new DefaultTableModel();
+            for (int i = 1; i <= col; i++) {
+                modelo.addColumn(rsmd.getColumnLabel(i));
+            }
+            while (rstb.next()) {
+                String fila[] = new String[col];
+                for (int j = 0; j < col; j++) {
+                    fila[j] = rstb.getString(j + 1);
+                }
+                modelo.addRow(fila);
+            }
+            resultado.setModel(modelo);
+            cStmt.close();
+        } catch (Exception e) {
+            Logger.getLogger(ChefPropinaslDia.class.getName()).log(Level.SEVERE, null, e);
+
+        }
+
+        
+        
 
     }
 
@@ -41,13 +80,11 @@ public class entregarPedido extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        idCam = new javax.swing.JTextField();
-        entregar = new javax.swing.JButton();
         jMesa = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        resultado = new javax.swing.JTable();
         jBotonVolver = new javax.swing.JButton();
-        jMesa1 = new javax.swing.JLabel();
-        jMesa2 = new javax.swing.JLabel();
-        idMesa = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -78,29 +115,28 @@ public class entregarPedido extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
-        idCam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idCamActionPerformed(evt);
-            }
-        });
-
-        entregar.setBackground(new java.awt.Color(0, 153, 153));
-        entregar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        entregar.setForeground(new java.awt.Color(255, 255, 255));
-        entregar.setText("Entregar");
-        entregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entregarActionPerformed(evt);
-            }
-        });
-
-        jMesa.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jMesa.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 24)); // NOI18N
         jMesa.setForeground(new java.awt.Color(255, 255, 255));
-        jMesa.setText("Entregar pedido");
+        jMesa.setText("Mis propinas del día");
+
+        resultado.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        resultado.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        resultado.setRowHeight(40);
+        jScrollPane3.setViewportView(resultado);
 
         jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
         jBotonVolver.setBorder(null);
@@ -108,6 +144,7 @@ public class entregarPedido extends javax.swing.JFrame {
         jBotonVolver.setContentAreaFilled(false);
         jBotonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBotonVolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBotonVolver.setIconTextGap(6);
         jBotonVolver.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jBotonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,69 +152,43 @@ public class entregarPedido extends javax.swing.JFrame {
             }
         });
 
-        jMesa1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
-        jMesa1.setForeground(new java.awt.Color(255, 255, 255));
-        jMesa1.setText("Id camarero:");
-
-        jMesa2.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
-        jMesa2.setForeground(new java.awt.Color(255, 255, 255));
-        jMesa2.setText("Id mesa:");
-
-        idMesa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idMesaActionPerformed(evt);
-            }
-        });
+        jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel1.setText("Volver");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(158, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jMesa2)
-                        .addGap(47, 47, 47)
-                        .addComponent(idMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jMesa1)
-                        .addGap(47, 47, 47)
-                        .addComponent(idCam, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(171, 171, 171))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(183, 183, 183)
+                        .addGap(222, 222, 222)
                         .addComponent(jMesa))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(244, 244, 244)
-                        .addComponent(entregar, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jMesa)))
-                .addGap(50, 50, 50)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idCam, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jMesa1))
-                .addGap(56, 56, 56)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jMesa2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(entregar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59))
+                        .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)))
+                .addGap(14, 14, 14)
+                .addComponent(jMesa)
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(183, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -197,42 +208,11 @@ public class entregarPedido extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void idCamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idCamActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idCamActionPerformed
-
-    private void entregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entregarActionPerformed
-
-        try {
-            // Creamos la conexion  
-            CallableStatement cStmt;
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conec = DriverManager.getConnection("jdbc:mysql://localhost/entregafinalbd", "root", "ragnarok3798");
-            cStmt = conec.prepareCall("{call pc_entregar_pedido(?,?)}");
-            conec.setAutoCommit(true);
-
-            cStmt.setInt(1, Integer.parseInt(idCam.getText()));
-            cStmt.setInt(2, Integer.parseInt(idMesa.getText()));
-            cStmt.execute();
-            entregar.setText("Entregado!");
-            cStmt.close();
-            conec.close();
-        } catch (Exception e) {
-            Logger.getLogger(entregarPedido.class.getName()).log(Level.SEVERE, null, e);
-
-        }
-
-    }//GEN-LAST:event_entregarActionPerformed
-
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        CamInicio obj = new CamInicio();
+        ChefInicio obj =new  ChefInicio();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBotonVolverActionPerformed
-
-    private void idMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idMesaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idMesaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,23 +245,21 @@ public class entregarPedido extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new entregarPedido().setVisible(true);
+                new ChefPropinaslDia().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton entregar;
-    private javax.swing.JTextField idCam;
-    private javax.swing.JTextField idMesa;
     private javax.swing.JButton jBotonVolver;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jMesa;
-    private javax.swing.JLabel jMesa1;
-    private javax.swing.JLabel jMesa2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable resultado;
     // End of variables declaration//GEN-END:variables
 }

@@ -152,9 +152,7 @@ public class RecInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jFCamIdActionPerformed
 
     private void jBAgregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarPedidoActionPerformed
-        propinasDiaCam p= new propinasDiaCam();
-        p.setVisible(true);
-        dispose();
+      
     }//GEN-LAST:event_jBAgregarPedidoActionPerformed
 
     private void jBAgregarPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarPedido1ActionPerformed

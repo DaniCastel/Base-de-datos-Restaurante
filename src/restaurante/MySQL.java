@@ -5,6 +5,7 @@
  */
 package restaurante;
 
+import Interfaz.WUsuarioInvalido;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -22,11 +23,10 @@ public class MySQL {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + db_name, user, pass);
             System.out.println("Se ha iniciado la conexión con el servidor de forma exitosa");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(MySQL.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(MySQL.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (Exception e) {
+            WUsuarioInvalido p= new WUsuarioInvalido();
+           p.setVisible(true);
+        } 
     }
     public void closeConnection() {
         try {

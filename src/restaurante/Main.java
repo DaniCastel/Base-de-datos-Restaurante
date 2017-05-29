@@ -19,6 +19,7 @@ public class Main {
      */
      public static MySQL db = new MySQL();
      public static Integer sedeid=1;
+     public static String sesion;
         
     public static void main(String[] args) {
        Login p= new Login();
