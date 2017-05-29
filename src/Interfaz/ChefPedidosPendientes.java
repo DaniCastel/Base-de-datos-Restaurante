@@ -294,7 +294,7 @@ public class ChefPedidosPendientes extends javax.swing.JFrame {
             obj2.setVisible(true);
             
             Logger.getLogger(ChefPedidosPendientes.class.getName()).log(Level.SEVERE, null, e);
-             System.out.println("no se hizo pedidos");
+             System.out.println("no pedidos");
 
         }
        

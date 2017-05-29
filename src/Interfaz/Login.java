@@ -162,7 +162,7 @@ public class Login extends javax.swing.JFrame {
             p.setVisible(true);
             dispose();
         }else if(usuario.equals("Recepcionista")){
-            RecInicio p= new RecInicio();
+            RecID p= new RecID();
             p.setVisible(true);
             dispose();
         }else if(usuario.equals("Cliente")){

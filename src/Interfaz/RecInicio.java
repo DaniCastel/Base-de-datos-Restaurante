@@ -17,14 +17,24 @@ import restaurante.*;
 public class RecInicio extends javax.swing.JFrame {
 
 
-    public static Integer idCam ;
+    
     
     public RecInicio() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Inicio Camarero");
+        setTitle("Inicio Recepcionista");
+        jSede.setText("Sede "+
+                Main.sedeid);
         
+         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonSalir.png"));
+        Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
+        jBotonVolver.setIcon(icono);
+        
+       
+        Imagen2 Imagen = new Imagen2(740,420);
+        jPanel1.add(Imagen);
+        jPanel1.repaint();
     }
 
    
@@ -34,16 +44,16 @@ public class RecInicio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jFCamId = new javax.swing.JTextField();
-        jCamID = new javax.swing.JLabel();
-        jBAgregarPedido = new javax.swing.JButton();
-        jBAgregarPedido1 = new javax.swing.JButton();
-        jBAgregarPedido2 = new javax.swing.JButton();
+        jSede = new javax.swing.JLabel();
+        jBVerFacturas = new javax.swing.JButton();
+        jBotonVolver = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jBRegistrarFac = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
@@ -51,40 +61,48 @@ public class RecInicio extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Recepcionista");
 
-        jFCamId.addActionListener(new java.awt.event.ActionListener() {
+        jSede.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 36)); // NOI18N
+        jSede.setForeground(new java.awt.Color(255, 255, 255));
+        jSede.setText("SEDE ");
+
+        jBVerFacturas.setBackground(new java.awt.Color(51, 51, 51));
+        jBVerFacturas.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        jBVerFacturas.setForeground(new java.awt.Color(255, 255, 255));
+        jBVerFacturas.setText("Ver facturas");
+        jBVerFacturas.setBorderPainted(false);
+        jBVerFacturas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFCamIdActionPerformed(evt);
+                jBVerFacturasActionPerformed(evt);
             }
         });
 
-        jCamID.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
-        jCamID.setForeground(new java.awt.Color(255, 255, 255));
-        jCamID.setText("ID");
-
-        jBAgregarPedido.setBackground(new java.awt.Color(0, 102, 102));
-        jBAgregarPedido.setForeground(new java.awt.Color(255, 255, 255));
-        jBAgregarPedido.setText("Mis propinas del día");
-        jBAgregarPedido.addActionListener(new java.awt.event.ActionListener() {
+        jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
+        jBotonVolver.setBorder(null);
+        jBotonVolver.setBorderPainted(false);
+        jBotonVolver.setContentAreaFilled(false);
+        jBotonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBotonVolver.setFocusPainted(false);
+        jBotonVolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBotonVolver.setIconTextGap(6);
+        jBotonVolver.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jBotonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBAgregarPedidoActionPerformed(evt);
+                jBotonVolverActionPerformed(evt);
             }
         });
 
-        jBAgregarPedido1.setBackground(new java.awt.Color(0, 102, 102));
-        jBAgregarPedido1.setForeground(new java.awt.Color(255, 255, 255));
-        jBAgregarPedido1.setText("Agregar Pedido");
-        jBAgregarPedido1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBAgregarPedido1ActionPerformed(evt);
-            }
-        });
+        jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Cerrar Sesión");
 
-        jBAgregarPedido2.setBackground(new java.awt.Color(0, 102, 102));
-        jBAgregarPedido2.setForeground(new java.awt.Color(255, 255, 255));
-        jBAgregarPedido2.setText("Entregar Pedido");
-        jBAgregarPedido2.addActionListener(new java.awt.event.ActionListener() {
+        jBRegistrarFac.setBackground(new java.awt.Color(51, 51, 51));
+        jBRegistrarFac.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        jBRegistrarFac.setForeground(new java.awt.Color(255, 255, 255));
+        jBRegistrarFac.setText("Registrar Factura");
+        jBRegistrarFac.setBorderPainted(false);
+        jBRegistrarFac.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBAgregarPedido2ActionPerformed(evt);
+                jBRegistrarFacActionPerformed(evt);
             }
         });
 
@@ -93,44 +111,42 @@ public class RecInicio extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jBAgregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(284, 284, 284))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jBAgregarPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(80, 80, 80)
-                        .addComponent(jBAgregarPedido2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(164, 164, 164))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(223, 223, 223)
-                        .addComponent(jCamID, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(jFCamId, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(266, 266, 266)
-                        .addComponent(jLabel2)))
-                .addGap(118, 272, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSede, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(294, 294, 294))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jBVerFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBRegistrarFac, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(134, 134, 134))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel1)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(16, 16, 16)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel2)))
+                .addGap(18, 18, 18)
+                .addComponent(jSede, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFCamId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCamID, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBAgregarPedido2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBAgregarPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(jBAgregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(97, Short.MAX_VALUE))
+                    .addComponent(jBVerFacturas, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBRegistrarFac, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(148, 148, 148))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,35 +157,37 @@ public class RecInicio extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jFCamIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFCamIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFCamIdActionPerformed
+    private void jBVerFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVerFacturasActionPerformed
 
-    private void jBAgregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarPedidoActionPerformed
-      
-    }//GEN-LAST:event_jBAgregarPedidoActionPerformed
-
-    private void jBAgregarPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarPedido1ActionPerformed
-        String ux = jFCamId.getText();
-        System.out.println(ux);
-        idCam=Integer.parseInt(ux);
+            Recfactura p= new Recfactura();
+            p.setVisible(true);
+            dispose();
+       
         
-        CamAgregarPedido p= new CamAgregarPedido();
-        p.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jBAgregarPedido1ActionPerformed
+    }//GEN-LAST:event_jBVerFacturasActionPerformed
 
-    private void jBAgregarPedido2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarPedido2ActionPerformed
-        pedidosCamarero p= new pedidosCamarero();
-        p.setVisible(true);
+    private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
+        Login obj =new Login();
+        obj.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jBAgregarPedido2ActionPerformed
+        try {
+            MySQL.conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jBotonVolverActionPerformed
+
+    private void jBRegistrarFacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRegistrarFacActionPerformed
+        RecRegistrarFactura obj =new RecRegistrarFactura();
+        obj.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jBRegistrarFacActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,18 +221,18 @@ public class RecInicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CamInicio().setVisible(true);
+                new RecInicio().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBAgregarPedido;
-    private javax.swing.JButton jBAgregarPedido1;
-    private javax.swing.JButton jBAgregarPedido2;
-    private javax.swing.JLabel jCamID;
-    private javax.swing.JTextField jFCamId;
+    private javax.swing.JButton jBRegistrarFac;
+    private javax.swing.JButton jBVerFacturas;
+    private javax.swing.JButton jBotonVolver;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jSede;
     // End of variables declaration//GEN-END:variables
 }

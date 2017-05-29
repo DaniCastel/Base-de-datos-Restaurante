@@ -19,11 +19,11 @@ import restaurante.*;
 import static restaurante.MySQL.conn;
 
 
-public class comprarInsumo extends javax.swing.JFrame {
+public class AGcomprarInsumo extends javax.swing.JFrame {
 
 
     
-    public comprarInsumo() {
+    public AGcomprarInsumo() {
         
         initComponents();
         setLocationRelativeTo(null); 
@@ -33,9 +33,12 @@ public class comprarInsumo extends javax.swing.JFrame {
                 CamInicio.idCam);
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
-        Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(20,20,10));
-        jBotonVolver.setIcon(icono);
-
+        Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
+        jBotonVolver1.setIcon(icono);
+        
+        Imagen1 Imagen = new Imagen1(740,420);
+        jPanel1.add(Imagen);
+        jPanel1.repaint();
         
         
         
@@ -57,19 +60,19 @@ public class comprarInsumo extends javax.swing.JFrame {
         proveedor = new javax.swing.JTextField();
         insumo = new javax.swing.JTextField();
         jPlato = new javax.swing.JLabel();
-        jBotonVolver = new javax.swing.JButton();
         cantidadLabel = new javax.swing.JLabel();
         cantidad = new javax.swing.JTextField();
+        jBotonVolver1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
         jSaludo.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
-        jSaludo.setForeground(new java.awt.Color(255, 255, 255));
         jSaludo.setText("Comprar insumo");
 
         sede.addActionListener(new java.awt.event.ActionListener() {
@@ -89,11 +92,9 @@ public class comprarInsumo extends javax.swing.JFrame {
         });
 
         jSaludo1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
-        jSaludo1.setForeground(new java.awt.Color(255, 255, 255));
         jSaludo1.setText("Nombre del insumo");
 
         jMesa.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
-        jMesa.setForeground(new java.awt.Color(255, 255, 255));
         jMesa.setText("Sede");
 
         proveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -109,24 +110,9 @@ public class comprarInsumo extends javax.swing.JFrame {
         });
 
         jPlato.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
-        jPlato.setForeground(new java.awt.Color(255, 255, 255));
         jPlato.setText("Nombre del proveedor");
 
-        jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
-        jBotonVolver.setBorder(null);
-        jBotonVolver.setBorderPainted(false);
-        jBotonVolver.setContentAreaFilled(false);
-        jBotonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBotonVolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jBotonVolver.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        jBotonVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBotonVolverActionPerformed(evt);
-            }
-        });
-
         cantidadLabel.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
-        cantidadLabel.setForeground(new java.awt.Color(255, 255, 255));
         cantidadLabel.setText("Cantidad");
 
         cantidad.addActionListener(new java.awt.event.ActionListener() {
@@ -134,6 +120,24 @@ public class comprarInsumo extends javax.swing.JFrame {
                 cantidadActionPerformed(evt);
             }
         });
+
+        jBotonVolver1.setBackground(new java.awt.Color(153, 0, 0));
+        jBotonVolver1.setBorder(null);
+        jBotonVolver1.setBorderPainted(false);
+        jBotonVolver1.setContentAreaFilled(false);
+        jBotonVolver1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBotonVolver1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBotonVolver1.setIconTextGap(6);
+        jBotonVolver1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jBotonVolver1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonVolver1ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel3.setText("Volver");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -164,8 +168,10 @@ public class comprarInsumo extends javax.swing.JFrame {
                 .addComponent(realizarCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBotonVolver1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(204, 204, 204)
                 .addComponent(jSaludo)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -182,8 +188,12 @@ public class comprarInsumo extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSaludo)
-                    .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel3)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jBotonVolver1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(16, 16, 16))))
+                .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPlato)
                     .addComponent(jMesa))
@@ -235,9 +245,9 @@ public class comprarInsumo extends javax.swing.JFrame {
             // Creamos la conexion  
             CallableStatement cStmt;
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conec = DriverManager.getConnection("jdbc:mysql://localhost/entregafinalbd","root","ragnarok3798");
-            cStmt = conec.prepareCall("{call sp_compra_insumo(?,?,?,?)}");
-            conec.setAutoCommit(true);  
+           
+            cStmt = MySQL.conn.prepareCall("{call sp_compra_insumo(?,?,?,?)}");
+            MySQL.conn.setAutoCommit(true);  
               
              cStmt.setInt(1, sp_sede);    
              cStmt.setString(2, inProveedor);  
@@ -246,9 +256,9 @@ public class comprarInsumo extends javax.swing.JFrame {
           
              cStmt.execute();
              cStmt.close();
-             conec.close();
+
         }catch (Exception e) {  
-                     Logger.getLogger(comprarInsumo.class.getName()).log(Level.SEVERE, null, e);
+                     Logger.getLogger(AGcomprarInsumo.class.getName()).log(Level.SEVERE, null, e);
 
         }
              
@@ -262,15 +272,16 @@ public class comprarInsumo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_insumoActionPerformed
 
-    private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        CamInicio obj =new CamInicio();
-        obj.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jBotonVolverActionPerformed
-
     private void cantidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantidadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cantidadActionPerformed
+
+    private void jBotonVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolver1ActionPerformed
+        AGInicio obj =new AGInicio();
+        obj.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_jBotonVolver1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,7 +315,7 @@ public class comprarInsumo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new comprarInsumo().setVisible(true);
+                new AGcomprarInsumo().setVisible(true);
             }
         });
     }
@@ -313,7 +324,8 @@ public class comprarInsumo extends javax.swing.JFrame {
     private javax.swing.JTextField cantidad;
     private javax.swing.JLabel cantidadLabel;
     private javax.swing.JTextField insumo;
-    private javax.swing.JButton jBotonVolver;
+    private javax.swing.JButton jBotonVolver1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jMesa;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jPlato;
