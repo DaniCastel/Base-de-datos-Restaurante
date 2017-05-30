@@ -18,9 +18,9 @@ import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 import static restaurante.MySQL.conn;
 
-public class consultarCantidad extends javax.swing.JFrame {
+public class AGconsultarCantidad extends javax.swing.JFrame {
 
-    public consultarCantidad() {
+    public AGconsultarCantidad() {
 
         initComponents();
         setLocationRelativeTo(null);
@@ -29,6 +29,13 @@ public class consultarCantidad extends javax.swing.JFrame {
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(20, 20, 10));
         jBotonVolver.setIcon(icono);
+        
+        
+        
+       
+        Imagen1 Imagen = new Imagen1(740,420);
+        jPanel1.add(Imagen);
+        jPanel1.repaint();
 
     }
 
@@ -44,12 +51,13 @@ public class consultarCantidad extends javax.swing.JFrame {
         sedId = new javax.swing.JTextField();
         consultar = new javax.swing.JButton();
         jMesa = new javax.swing.JLabel();
-        jBotonVolver = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         resultado = new javax.swing.JTable();
         jMesa1 = new javax.swing.JLabel();
         jMesa2 = new javax.swing.JLabel();
         insNombre = new javax.swing.JTextField();
+        jBotonVolver = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -80,7 +88,7 @@ public class consultarCantidad extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
@@ -90,10 +98,12 @@ public class consultarCantidad extends javax.swing.JFrame {
             }
         });
 
-        consultar.setBackground(new java.awt.Color(0, 153, 153));
+        consultar.setBackground(new java.awt.Color(0, 102, 102));
         consultar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         consultar.setForeground(new java.awt.Color(255, 255, 255));
         consultar.setText("Consultar");
+        consultar.setBorderPainted(false);
+        consultar.setContentAreaFilled(false);
         consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultarActionPerformed(evt);
@@ -101,21 +111,7 @@ public class consultarCantidad extends javax.swing.JFrame {
         });
 
         jMesa.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
-        jMesa.setForeground(new java.awt.Color(255, 255, 255));
         jMesa.setText("Consultar cantidad de insumo");
-
-        jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
-        jBotonVolver.setBorder(null);
-        jBotonVolver.setBorderPainted(false);
-        jBotonVolver.setContentAreaFilled(false);
-        jBotonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBotonVolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jBotonVolver.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        jBotonVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBotonVolverActionPerformed(evt);
-            }
-        });
 
         resultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -131,11 +127,9 @@ public class consultarCantidad extends javax.swing.JFrame {
         jScrollPane3.setViewportView(resultado);
 
         jMesa1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
-        jMesa1.setForeground(new java.awt.Color(255, 255, 255));
         jMesa1.setText("Id sede:");
 
         jMesa2.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
-        jMesa2.setForeground(new java.awt.Color(255, 255, 255));
         jMesa2.setText("Nombre insumo:");
 
         insNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -144,76 +138,96 @@ public class consultarCantidad extends javax.swing.JFrame {
             }
         });
 
+        jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
+        jBotonVolver.setBorder(null);
+        jBotonVolver.setBorderPainted(false);
+        jBotonVolver.setContentAreaFilled(false);
+        jBotonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBotonVolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBotonVolver.setIconTextGap(6);
+        jBotonVolver.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jBotonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotonVolverActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel1.setText("Volver");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jMesa1)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jMesa1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(sedId, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jMesa2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(insNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(45, 45, 45)
-                        .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(sedId, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(115, 115, 115)
-                        .addComponent(jMesa)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addComponent(jMesa2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(insNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jMesa)
+                .addGap(163, 163, 163))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(60, 60, 60)
+                        .addComponent(jMesa))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jMesa)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(13, 13, 13)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(194, 194, 194))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jMesa1)
-                            .addComponent(sedId, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(sedId, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jMesa1))
+                        .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jMesa2)
                             .addComponent(insNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(51, 51, 51)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76))))
+                        .addGap(51, 51, 51))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81)))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 719, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
 
         pack();
@@ -229,9 +243,9 @@ public class consultarCantidad extends javax.swing.JFrame {
             // Creamos la conexion  
             CallableStatement cStmt;
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conec = DriverManager.getConnection("jdbc:mysql://localhost/entregafinalbd", "root", "ragnarok3798");
-            cStmt = conec.prepareCall("{call proc_consultar_cantidad(?,?)}");
-            conec.setAutoCommit(true);
+           
+            cStmt = MySQL.conn.prepareCall("{call proc_consultar_cantidad(?,?)}");
+            MySQL.conn.setAutoCommit(true);
 
             cStmt.setInt(1, Integer.parseInt(sedId.getText()));
             cStmt.setString(2, insNombre.getText());
@@ -252,23 +266,28 @@ public class consultarCantidad extends javax.swing.JFrame {
             }
             resultado.setModel(modelo);
             cStmt.close();
-            conec.close();
         } catch (Exception e) {
-            Logger.getLogger(consultarCantidad.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(AGconsultarCantidad.class.getName()).log(Level.SEVERE, null, e);
 
         }
 
     }//GEN-LAST:event_consultarActionPerformed
 
-    private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        CamInicio obj = new CamInicio();
-        obj.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jBotonVolverActionPerformed
-
     private void insNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_insNombreActionPerformed
+
+    private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
+        if(Main.sesion.equals("Chef")){
+            ChefInicio obj =new  ChefInicio();
+        obj.setVisible(true);
+        dispose();
+        }else{
+          AGInicio2 obj =new AGInicio2();
+        obj.setVisible(true);
+        dispose();  
+        }
+    }//GEN-LAST:event_jBotonVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -301,7 +320,7 @@ public class consultarCantidad extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new consultarCantidad().setVisible(true);
+                new AGconsultarCantidad().setVisible(true);
             }
         });
     }
@@ -310,6 +329,7 @@ public class consultarCantidad extends javax.swing.JFrame {
     private javax.swing.JButton consultar;
     private javax.swing.JTextField insNombre;
     private javax.swing.JButton jBotonVolver;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jMesa;
     private javax.swing.JLabel jMesa1;
     private javax.swing.JLabel jMesa2;

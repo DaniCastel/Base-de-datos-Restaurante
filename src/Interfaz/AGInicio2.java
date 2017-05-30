@@ -67,11 +67,16 @@ public class AGInicio2 extends javax.swing.JFrame {
         jAdminGral = new javax.swing.JLabel();
         jBotonVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jPlatoMenosVendido = new javax.swing.JButton();
-        jPlatoMasVendido = new javax.swing.JButton();
+        jPlatosVendidos = new javax.swing.JButton();
+        jInsumosContables = new javax.swing.JButton();
         jAdminGral2 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jBotonSiguiente = new javax.swing.JButton();
+        jPlatoMasVendido1 = new javax.swing.JButton();
+        jAdminGral3 = new javax.swing.JLabel();
+        jConsultarCantidadIns = new javax.swing.JButton();
+        jInsumosMenosGastado = new javax.swing.JButton();
+        jPlatoMenosVendido1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -147,23 +152,23 @@ public class AGInicio2 extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 102, 102));
         jLabel1.setText("Cerrar Sesión");
 
-        jPlatoMenosVendido.setBackground(new java.awt.Color(0, 102, 102));
-        jPlatoMenosVendido.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
-        jPlatoMenosVendido.setForeground(new java.awt.Color(255, 255, 255));
-        jPlatoMenosVendido.setText("Plato menos vendido");
-        jPlatoMenosVendido.addActionListener(new java.awt.event.ActionListener() {
+        jPlatosVendidos.setBackground(new java.awt.Color(0, 102, 102));
+        jPlatosVendidos.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jPlatosVendidos.setForeground(new java.awt.Color(255, 255, 255));
+        jPlatosVendidos.setText("Platos vendidos");
+        jPlatosVendidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPlatoMenosVendidoActionPerformed(evt);
+                jPlatosVendidosActionPerformed(evt);
             }
         });
 
-        jPlatoMasVendido.setBackground(new java.awt.Color(0, 102, 102));
-        jPlatoMasVendido.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
-        jPlatoMasVendido.setForeground(new java.awt.Color(255, 255, 255));
-        jPlatoMasVendido.setText("Plato mas vendido");
-        jPlatoMasVendido.addActionListener(new java.awt.event.ActionListener() {
+        jInsumosContables.setBackground(new java.awt.Color(0, 102, 102));
+        jInsumosContables.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jInsumosContables.setForeground(new java.awt.Color(255, 255, 255));
+        jInsumosContables.setText("Insumos Contable");
+        jInsumosContables.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPlatoMasVendidoActionPerformed(evt);
+                jInsumosContablesActionPerformed(evt);
             }
         });
 
@@ -188,37 +193,83 @@ public class AGInicio2 extends javax.swing.JFrame {
             }
         });
 
+        jPlatoMasVendido1.setBackground(new java.awt.Color(0, 102, 102));
+        jPlatoMasVendido1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jPlatoMasVendido1.setForeground(new java.awt.Color(255, 255, 255));
+        jPlatoMasVendido1.setText("Plato mas vendido");
+        jPlatoMasVendido1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPlatoMasVendido1ActionPerformed(evt);
+            }
+        });
+
+        jAdminGral3.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jAdminGral3.setText("Insumos");
+
+        jConsultarCantidadIns.setBackground(new java.awt.Color(0, 102, 102));
+        jConsultarCantidadIns.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 12)); // NOI18N
+        jConsultarCantidadIns.setForeground(new java.awt.Color(255, 255, 255));
+        jConsultarCantidadIns.setText("Consultar cantidad de insumo");
+        jConsultarCantidadIns.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jConsultarCantidadInsActionPerformed(evt);
+            }
+        });
+
+        jInsumosMenosGastado.setBackground(new java.awt.Color(0, 102, 102));
+        jInsumosMenosGastado.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jInsumosMenosGastado.setForeground(new java.awt.Color(255, 255, 255));
+        jInsumosMenosGastado.setText("Insumos Menos Gastado");
+        jInsumosMenosGastado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jInsumosMenosGastadoActionPerformed(evt);
+            }
+        });
+
+        jPlatoMenosVendido1.setBackground(new java.awt.Color(0, 102, 102));
+        jPlatoMenosVendido1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jPlatoMenosVendido1.setForeground(new java.awt.Color(255, 255, 255));
+        jPlatoMenosVendido1.setText("Plato menos vendido");
+        jPlatoMenosVendido1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPlatoMenosVendido1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPAdminGeneralLayout = new javax.swing.GroupLayout(jPAdminGeneral);
         jPAdminGeneral.setLayout(jPAdminGeneralLayout);
         jPAdminGeneralLayout.setHorizontalGroup(
             jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPAdminGeneralLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
-                        .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPAdminGeneralLayout.createSequentialGroup()
-                                .addGap(245, 245, 245)
-                                .addComponent(jPlatoMenosVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPAdminGeneralLayout.createSequentialGroup()
-                                .addGap(245, 245, 245)
-                                .addComponent(jPlatoMasVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
-                        .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBotonVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(137, 137, 137)
-                        .addComponent(jAdminGral)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                        .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBotonSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(48, 48, 48))))
+                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBotonVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(137, 137, 137)
+                .addComponent(jAdminGral)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBotonSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48))
             .addGroup(jPAdminGeneralLayout.createSequentialGroup()
-                .addGap(295, 295, 295)
+                .addGap(101, 101, 101)
+                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jInsumosContables, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jInsumosMenosGastado, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jConsultarCantidadIns, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPlatosVendidos, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPlatoMasVendido1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPlatoMenosVendido1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(119, 119, 119))
+            .addGroup(jPAdminGeneralLayout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(jAdminGral3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jAdminGral2)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(157, 157, 157))
         );
         jPAdminGeneralLayout.setVerticalGroup(
             jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,12 +292,22 @@ public class AGInicio2 extends javax.swing.JFrame {
                                 .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(21, 21, 21)))
                         .addGap(28, 28, 28)
-                        .addComponent(jAdminGral2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                        .addComponent(jPlatoMasVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jAdminGral2)
+                            .addComponent(jAdminGral3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jInsumosContables, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPlatoMasVendido1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jPlatoMenosVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(69, 69, 69))))
+                        .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jInsumosMenosGastado, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPlatoMenosVendido1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jConsultarCantidadIns, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPlatosVendidos, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(84, 84, 84))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -274,23 +335,45 @@ public class AGInicio2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
-    private void jPlatoMenosVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatoMenosVendidoActionPerformed
+    private void jPlatosVendidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatosVendidosActionPerformed
         AplatoMenosVendido p= new AplatoMenosVendido();
         p.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jPlatoMenosVendidoActionPerformed
+    }//GEN-LAST:event_jPlatosVendidosActionPerformed
 
-    private void jPlatoMasVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatoMasVendidoActionPerformed
-        AplatoMasVendido p= new AplatoMasVendido();
+    private void jInsumosContablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsumosContablesActionPerformed
+       AGinventarioContable p= new AGinventarioContable();
         p.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jPlatoMasVendidoActionPerformed
+    }//GEN-LAST:event_jInsumosContablesActionPerformed
 
     private void jBotonSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonSiguienteActionPerformed
         AGInicio obj =new AGInicio();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBotonSiguienteActionPerformed
+
+    private void jPlatoMasVendido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatoMasVendido1ActionPerformed
+        AplatoMasVendido obj =new AplatoMasVendido();
+        obj.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jPlatoMasVendido1ActionPerformed
+
+    private void jConsultarCantidadInsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConsultarCantidadInsActionPerformed
+        AGconsultarCantidad obj =new AGconsultarCantidad();
+        obj.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jConsultarCantidadInsActionPerformed
+
+    private void jInsumosMenosGastadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsumosMenosGastadoActionPerformed
+        AGinsumoMenosGastado obj =new AGinsumoMenosGastado();
+        obj.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jInsumosMenosGastadoActionPerformed
+
+    private void jPlatoMenosVendido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatoMenosVendido1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPlatoMenosVendido1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -332,11 +415,15 @@ public class AGInicio2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jAdminGral;
     private javax.swing.JLabel jAdminGral2;
+    private javax.swing.JLabel jAdminGral3;
     private javax.swing.JButton jBotonSiguiente;
     private javax.swing.JButton jBotonVolver;
+    private javax.swing.JButton jConsultarCantidadIns;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
+    private javax.swing.JButton jInsumosContables;
+    private javax.swing.JButton jInsumosMenosGastado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu3;
@@ -346,7 +433,8 @@ public class AGInicio2 extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JPanel jPAdminGeneral;
-    private javax.swing.JButton jPlatoMasVendido;
-    private javax.swing.JButton jPlatoMenosVendido;
+    private javax.swing.JButton jPlatoMasVendido1;
+    private javax.swing.JButton jPlatoMenosVendido1;
+    private javax.swing.JButton jPlatosVendidos;
     // End of variables declaration//GEN-END:variables
 }

@@ -71,6 +71,8 @@ public class ASInicio extends javax.swing.JFrame {
         jPlatoMenosVendido = new javax.swing.JButton();
         jPlatoMasVendido = new javax.swing.JButton();
         jAdminGral2 = new javax.swing.JLabel();
+        jInsumosContables = new javax.swing.JButton();
+        jAdminGral3 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -232,6 +234,19 @@ public class ASInicio extends javax.swing.JFrame {
         jAdminGral2.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jAdminGral2.setText("Estadísticas");
 
+        jInsumosContables.setBackground(new java.awt.Color(0, 102, 102));
+        jInsumosContables.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jInsumosContables.setForeground(new java.awt.Color(255, 255, 255));
+        jInsumosContables.setText("Insumos Contable");
+        jInsumosContables.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jInsumosContablesActionPerformed(evt);
+            }
+        });
+
+        jAdminGral3.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jAdminGral3.setText("Insumos");
+
         javax.swing.GroupLayout jPAdminGeneralLayout = new javax.swing.GroupLayout(jPAdminGeneral);
         jPAdminGeneral.setLayout(jPAdminGeneralLayout);
         jPAdminGeneralLayout.setHorizontalGroup(
@@ -245,7 +260,7 @@ public class ASInicio extends javax.swing.JFrame {
                             .addComponent(jBotonVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(137, 137, 137)
                         .addComponent(jAdminGral)
-                        .addContainerGap(192, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPAdminGeneralLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -260,7 +275,10 @@ public class ASInicio extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPAdminGeneralLayout.createSequentialGroup()
                                 .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jPlatoMasVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
+                                        .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jInsumosContables, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jPropinasChef, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -269,6 +287,8 @@ public class ASInicio extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPAdminGeneralLayout.createSequentialGroup()
                 .addGap(69, 69, 69)
                 .addComponent(jAdminGral2)
+                .addGap(96, 96, 96)
+                .addComponent(jAdminGral3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jAdminGral1)
                 .addGap(105, 105, 105))
@@ -287,11 +307,13 @@ public class ASInicio extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jAdminGral1)
-                    .addComponent(jAdminGral2))
+                    .addComponent(jAdminGral2)
+                    .addComponent(jAdminGral3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPropinasChef, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jInsumosContables, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jChefMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -311,7 +333,7 @@ public class ASInicio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPAdminGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+            .addComponent(jPAdminGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -380,6 +402,12 @@ public class ASInicio extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jPlatoMasVendidoActionPerformed
 
+    private void jInsumosContablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsumosContablesActionPerformed
+        AGinventarioContable p= new AGinventarioContable();
+        p.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jInsumosContablesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -421,6 +449,7 @@ public class ASInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jAdminGral;
     private javax.swing.JLabel jAdminGral1;
     private javax.swing.JLabel jAdminGral2;
+    private javax.swing.JLabel jAdminGral3;
     private javax.swing.JButton jBComprasFecha;
     private javax.swing.JButton jBGananciaPromedio;
     private javax.swing.JButton jBotonVolver;
@@ -429,6 +458,7 @@ public class ASInicio extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
+    private javax.swing.JButton jInsumosContables;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
