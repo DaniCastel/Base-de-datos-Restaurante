@@ -14,40 +14,38 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class AGcamareroMayorPropina extends javax.swing.JFrame {
+public class Ag9propinaCamarero extends javax.swing.JFrame {
     
 
     
-    public AGcamareroMayorPropina() {
+    public Ag9propinaCamarero() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Propinas: camareros");
         imprimirMenu();
+        
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
         jBotonVolver.setIcon(icono);
         
-       
         Imagen1 Imagen = new Imagen1(740,420);
         jPanel1.add(Imagen);
         jPanel1.repaint();
-        
-        
     }
     
     public void imprimirMenu(){
         try {
-
+   
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AGcamareroMayorPropina.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Ag9propinaCamarero.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+     
             Statement st = MySQL.conn.createStatement();
-            String sql = "Select * from cam_mayor_propina";
+            String sql = "Select * from propina_camarero";
             ResultSet rstb = st.executeQuery(sql);
             ResultSetMetaData rsmd = rstb.getMetaData();
             int col = rsmd.getColumnCount();
@@ -65,7 +63,7 @@ public class AGcamareroMayorPropina extends javax.swing.JFrame {
             menu.setModel(modelo);
 
         } catch (SQLException ex) {
-            Logger.getLogger(AGcamareroMayorPropina.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Ag9propinaCamarero.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -87,10 +85,10 @@ public class AGcamareroMayorPropina extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 24)); // NOI18N
-        jLabel2.setText("Camarero con mayor propina");
+        jLabel2.setText("Propinas: Camareros");
 
-        menu.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         menu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -102,7 +100,6 @@ public class AGcamareroMayorPropina extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        menu.setRowHeight(25);
         jScrollPane1.setViewportView(menu);
 
         jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
@@ -128,35 +125,36 @@ public class AGcamareroMayorPropina extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(684, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(43, 43, 43))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(167, 167, 167))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(171, 171, 171)
+                        .addComponent(jLabel2)))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)))
-                .addGap(23, 23, 23)
-                .addComponent(jLabel2)
-                .addGap(64, 64, 64)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(200, Short.MAX_VALUE))
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(13, 13, 13)))))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -177,7 +175,6 @@ public class AGcamareroMayorPropina extends javax.swing.JFrame {
         AGInicio obj =new AGInicio();
         obj.setVisible(true);
         dispose();
-
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
     /**
@@ -212,7 +209,7 @@ public class AGcamareroMayorPropina extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AGcamareroMayorPropina().setVisible(true);
+                new Ag9propinaCamarero().setVisible(true);
             }
         });
     }

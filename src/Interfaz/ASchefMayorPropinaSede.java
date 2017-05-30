@@ -23,7 +23,7 @@ public class ASchefMayorPropinaSede extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Chef con mayor propina");
         imprimirMenu();
         
         

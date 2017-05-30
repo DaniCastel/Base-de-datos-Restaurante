@@ -22,7 +22,7 @@ public class CamClientesAtendidos extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Clientes Atendidos");
         imprimirMenu();
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver.png"));

@@ -22,7 +22,7 @@ public class AGinventarioPeso extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Inventario de Insumos peso");
         imprimirMenu();
         
         
@@ -237,9 +237,15 @@ public class AGinventarioPeso extends javax.swing.JFrame {
     }//GEN-LAST:event_sedeActionPerformed
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        AGInicio2 obj = new AGInicio2();
-        obj.setVisible(true);
-        dispose();
+         if(Main.sesion.equals("Admin_general")){
+            AGInicio2 obj =new  AGInicio2();
+            obj.setVisible(true);
+            dispose();
+        }else{
+            ASInicio obj =new ASInicio();
+            obj.setVisible(true);
+            dispose();  
+        }
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
     /**

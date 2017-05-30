@@ -23,7 +23,7 @@ public class AplatoMasVendidoSede extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Plato mas vendido");
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
@@ -135,7 +135,11 @@ public class AplatoMasVendidoSede extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 24)); // NOI18N
         jLabel3.setText("Sede:");
 
+        consultar.setBackground(new java.awt.Color(0, 102, 102));
+        consultar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        consultar.setForeground(new java.awt.Color(255, 255, 255));
         consultar.setText("Consultar");
+        consultar.setBorderPainted(false);
         consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultarActionPerformed(evt);
@@ -174,8 +178,8 @@ public class AplatoMasVendidoSede extends javax.swing.JFrame {
                         .addGap(4, 4, 4)
                         .addComponent(sedein, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53)
-                        .addComponent(consultar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
         sedeLayout.setVerticalGroup(
             sedeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,10 +194,10 @@ public class AplatoMasVendidoSede extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(70, 70, 70)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(sedeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(consultar)
+                    .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sedein, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(64, 64, 64))
         );
@@ -213,15 +217,11 @@ public class AplatoMasVendidoSede extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        if(Main.sesion.equals("Cliente")){
-            CliInicio obj =new  CliInicio();
+     
+        ASInicio obj =new  ASInicio();
         obj.setVisible(true);
         dispose();
-        }else{
-          AGInicio obj =new AGInicio();
-        obj.setVisible(true);
-        dispose();  
-        }
+       
         
         
     }//GEN-LAST:event_jBotonVolverActionPerformed

@@ -220,7 +220,7 @@ public class AScomprasPorFecha extends javax.swing.JFrame {
     }//GEN-LAST:event_inputFechaActionPerformed
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        AGInicio obj =new AGInicio();
+        ASInicio obj =new ASInicio();
         obj.setVisible(true);
         dispose();
 

@@ -19,18 +19,17 @@ import restaurante.*;
 import static restaurante.MySQL.conn;
 
 
-public class AGcomprarInsumo extends javax.swing.JFrame {
+public class AG4comprarInsumo extends javax.swing.JFrame {
 
 
     
-    public AGcomprarInsumo() {
+    public AG4comprarInsumo() {
         
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Agregar Pedido");
-        jSaludo.setText("Camarero "+
-                CamInicio.idCam);
+        setTitle("Comprar Insumo");
+      
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
@@ -233,7 +232,10 @@ public class AGcomprarInsumo extends javax.swing.JFrame {
     }//GEN-LAST:event_sedeActionPerformed
 
     private void realizarCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_realizarCompraActionPerformed
-        String inSede = sede.getText();
+       
+        
+        try{
+             String inSede = sede.getText();
         String inProveedor = proveedor.getText();
         String inInsumo = insumo.getText();
         String inCantidad = cantidad.getText();
@@ -256,11 +258,19 @@ public class AGcomprarInsumo extends javax.swing.JFrame {
           
              cStmt.execute();
              cStmt.close();
+             
+             WCompraRealizada obj =new  WCompraRealizada();
+            obj.setVisible(true);
 
         }catch (Exception e) {  
-                     Logger.getLogger(AGcomprarInsumo.class.getName()).log(Level.SEVERE, null, e);
+                     Logger.getLogger(AG4comprarInsumo.class.getName()).log(Level.SEVERE, null, e);
 
         }
+        }catch(Exception e){
+            WIngresaDatos obj =new  WIngresaDatos();
+            obj.setVisible(true);
+        }
+       
              
     }//GEN-LAST:event_realizarCompraActionPerformed
 
@@ -277,9 +287,15 @@ public class AGcomprarInsumo extends javax.swing.JFrame {
     }//GEN-LAST:event_cantidadActionPerformed
 
     private void jBotonVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolver1ActionPerformed
-        AGInicio obj =new AGInicio();
+        if(Main.sesion.equals("Admin_general")){
+            AGInicio obj =new  AGInicio();
         obj.setVisible(true);
         dispose();
+        }else{
+          ASInicio obj =new ASInicio();
+        obj.setVisible(true);
+        dispose();  
+        }
 
     }//GEN-LAST:event_jBotonVolver1ActionPerformed
 
@@ -315,7 +331,7 @@ public class AGcomprarInsumo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AGcomprarInsumo().setVisible(true);
+                new AG4comprarInsumo().setVisible(true);
             }
         });
     }

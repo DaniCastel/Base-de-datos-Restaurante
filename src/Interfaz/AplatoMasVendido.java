@@ -22,7 +22,7 @@ public class AplatoMasVendido extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Plato mas vendido");
         imprimirMenu();
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));

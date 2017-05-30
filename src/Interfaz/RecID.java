@@ -54,14 +54,14 @@ public class RecID extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AgananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AG1gananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
             }
             PreparedStatement st = MySQL.conn.prepareStatement("SELECT sede_recepcionista("+recid+")");
             ResultSet resultado = st.executeQuery();
             resultado.next();
             numero = resultado.getInt(1);
         } catch (SQLException ex) {
-            Logger.getLogger(AgananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AG1gananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
         }
         return numero;
     }

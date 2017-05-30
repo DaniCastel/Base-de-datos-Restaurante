@@ -1,14 +1,11 @@
 
 package Interfaz;
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Types;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,15 +14,18 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class AGgananciaNPFecha extends javax.swing.JFrame {
+public class AG3gananciaPorMetodoPago extends javax.swing.JFrame {
     
 
     
-    public AGgananciaNPFecha() {
+    public AG3gananciaPorMetodoPago() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Ganancia por metodo de pago");
+        imprimirMenu();
+        
+        
         
          ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
@@ -34,29 +34,38 @@ public class AGgananciaNPFecha extends javax.swing.JFrame {
         Imagen1 Imagen = new Imagen1(740,420);
         jPanel1.add(Imagen);
         jPanel1.repaint();
-        
-        
     }
     
-    public Integer llamar(String date){
-        int numero = 0;
+    public void imprimirMenu(){
         try {
-            
+
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AGgananciaNPFecha.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AG3gananciaPorMetodoPago.class.getName()).log(Level.SEVERE, null, ex);
             }
-           
-            PreparedStatement st = MySQL.conn.prepareStatement("select contarGananciaNetaPorFecha("+date+")");
-            ResultSet resultado = st.executeQuery();
-            resultado.next();
-            numero = resultado.getInt(1);
+ 
+            Statement st = MySQL.conn.createStatement();
+            String sql = "Select * from metodos_pago";
+            ResultSet rstb = st.executeQuery(sql);
+            ResultSetMetaData rsmd = rstb.getMetaData();
+            int col = rsmd.getColumnCount();
+            DefaultTableModel modelo = new DefaultTableModel();
+            for (int i = 1; i <= col; i++) {
+                modelo.addColumn(rsmd.getColumnLabel(i));
+            }
+            while (rstb.next()){
+                String fila[] = new String [col];
+                for (int j = 0; j < col; j++) {
+                    fila[j] = rstb.getString(j+1);
+                }
+                modelo.addRow(fila);
+            }
+            menu.setModel(modelo);
 
         } catch (SQLException ex) {
-            Logger.getLogger(AGgananciaNPFecha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AG3gananciaPorMetodoPago.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return numero;
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -64,11 +73,11 @@ public class AGgananciaNPFecha extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        fecha = new javax.swing.JLabel();
-        inputFecha = new javax.swing.JTextField();
-        boton = new javax.swing.JButton();
-        resultado = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        menu = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        sede = new java.awt.TextField();
+        consultar = new javax.swing.JButton();
         jBotonVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -81,31 +90,42 @@ public class AGgananciaNPFecha extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 24)); // NOI18N
-        jLabel2.setText("Ganancia neta en todas las sedes segun fecha");
+        jLabel2.setText("Ganancias por metodo de pago");
 
-        fecha.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
-        fecha.setText("Fecha (YYYY-MM-DD):");
+        menu.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(menu);
 
-        inputFecha.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        inputFecha.setText("Inserte fecha");
-        inputFecha.addActionListener(new java.awt.event.ActionListener() {
+        jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Sede:");
+
+        sede.setForeground(new java.awt.Color(102, 102, 255));
+        sede.setText("Todas");
+        sede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputFechaActionPerformed(evt);
+                sedeActionPerformed(evt);
             }
         });
 
-        boton.setText("Consultar");
-        boton.addActionListener(new java.awt.event.ActionListener() {
+        consultar.setBackground(new java.awt.Color(0, 102, 102));
+        consultar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        consultar.setForeground(new java.awt.Color(255, 255, 255));
+        consultar.setText("Consultar");
+        consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonActionPerformed(evt);
+                consultarActionPerformed(evt);
             }
         });
-
-        resultado.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        resultado.setText("Resultado");
-
-        jLabel4.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
-        jLabel4.setText("Resultado:");
 
         jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
         jBotonVolver.setBorder(null);
@@ -130,50 +150,52 @@ public class AGgananciaNPFecha extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(49, 49, 49))
+                .addGap(166, 166, 166))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(50, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fecha)
-                            .addComponent(jLabel4))
-                        .addGap(46, 46, 46)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(resultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(inputFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
-                        .addGap(44, 44, 44)
-                        .addComponent(boton))
+                        .addGap(261, 261, 261)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(23, 23, 23)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)))
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fecha)
-                    .addComponent(inputFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boton))
-                .addGap(74, 74, 74)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addComponent(sede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,14 +212,41 @@ public class AGgananciaNPFecha extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inputFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputFechaActionPerformed
+    private void sedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sedeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputFechaActionPerformed
+    }//GEN-LAST:event_sedeActionPerformed
 
-    private void botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActionPerformed
-        String fecha = "'"+inputFecha.getText()+"'";
-        resultado.setText(llamar(fecha).toString());
-    }//GEN-LAST:event_botonActionPerformed
+    private void consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarActionPerformed
+        try {
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           
+            Statement st = MySQL.conn.createStatement();
+            String sql = "Select * from metodos_pago where (fac_sed_id = " + sede.getText() +") " ;
+            ResultSet rstb = st.executeQuery(sql);
+            ResultSetMetaData rsmd = rstb.getMetaData();
+            int col = rsmd.getColumnCount();
+            DefaultTableModel modelo = new DefaultTableModel();
+            for (int i = 1; i <= col; i++) {
+                modelo.addColumn(rsmd.getColumnLabel(i));
+            }
+            while (rstb.next()){
+                String fila[] = new String [col];
+                for (int j = 0; j < col; j++) {
+                    fila[j] = rstb.getString(j+1);
+                }
+                modelo.addRow(fila);
+            }
+            menu.setModel(modelo);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_consultarActionPerformed
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
         AGInicio obj =new AGInicio();
@@ -237,20 +286,20 @@ public class AGgananciaNPFecha extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AGgananciaNPFecha().setVisible(true);
+                new AG3gananciaPorMetodoPago().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton boton;
-    private javax.swing.JLabel fecha;
-    private javax.swing.JTextField inputFecha;
+    private javax.swing.JButton consultar;
     private javax.swing.JButton jBotonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel resultado;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable menu;
+    private java.awt.TextField sede;
     // End of variables declaration//GEN-END:variables
 }

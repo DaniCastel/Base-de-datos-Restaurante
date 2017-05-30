@@ -14,15 +14,15 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class AGchefMayorPropina extends javax.swing.JFrame {
+public class AG7chefMayorPropina extends javax.swing.JFrame {
     
 
     
-    public AGchefMayorPropina() {
+    public AG7chefMayorPropina() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Chef con mayor propina");
         imprimirMenu();
         
         
@@ -43,7 +43,7 @@ public class AGchefMayorPropina extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AGchefMayorPropina.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AG7chefMayorPropina.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             Statement st = MySQL.conn.createStatement();
@@ -65,7 +65,7 @@ public class AGchefMayorPropina extends javax.swing.JFrame {
             menu.setModel(modelo);
   
         } catch (SQLException ex) {
-            Logger.getLogger(AGchefMayorPropina.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AG7chefMayorPropina.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -237,7 +237,7 @@ public class AGchefMayorPropina extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AGchefMayorPropina().setVisible(true);
+                new AG7chefMayorPropina().setVisible(true);
             }
         });
     }

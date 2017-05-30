@@ -29,7 +29,7 @@ public class AGInicio extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Inicio Camarero");
+        setTitle("Inicio Administrador General");
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonSalir.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
@@ -74,7 +74,6 @@ public class AGInicio extends javax.swing.JFrame {
         jBGananciaPromedio = new javax.swing.JButton();
         jAdminGral2 = new javax.swing.JLabel();
         jAdminGral3 = new javax.swing.JLabel();
-        jPropinasChef1 = new javax.swing.JButton();
         jComprarInsumo = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jBotonSiguiente = new javax.swing.JButton();
@@ -224,16 +223,6 @@ public class AGInicio extends javax.swing.JFrame {
         jAdminGral3.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jAdminGral3.setText("Compras");
 
-        jPropinasChef1.setBackground(new java.awt.Color(0, 102, 102));
-        jPropinasChef1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
-        jPropinasChef1.setForeground(new java.awt.Color(255, 255, 255));
-        jPropinasChef1.setText("Chefs");
-        jPropinasChef1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPropinasChef1ActionPerformed(evt);
-            }
-        });
-
         jComprarInsumo.setBackground(new java.awt.Color(0, 102, 102));
         jComprarInsumo.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
         jComprarInsumo.setForeground(new java.awt.Color(255, 255, 255));
@@ -309,16 +298,11 @@ public class AGInicio extends javax.swing.JFrame {
                                     .addComponent(jCamMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPAdminGeneralLayout.createSequentialGroup()
                                 .addGap(12, 12, 12)
-                                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
-                                        .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComprarInsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jPropinasChef1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
-                                        .addGap(458, 458, 458)
-                                        .addComponent(jChefMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComprarInsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jChefMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 29, Short.MAX_VALUE))
                     .addGroup(jPAdminGeneralLayout.createSequentialGroup()
                         .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -365,23 +349,16 @@ public class AGInicio extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
-                        .addComponent(jPropinasChef1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jChefMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)
-                        .addComponent(jCamMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
-                        .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComprarInsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(35, 35, 35)
-                        .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jHistorialCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBGananciaNetaPorFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)))
+                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComprarInsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jChefMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jHistorialCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBGananciaNetaPorFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCamMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBComprasFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -404,14 +381,14 @@ public class AGInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBGananciaPorMetodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGananciaPorMetodoActionPerformed
-        AGgananciaPorMetodoPago obj =new AGgananciaPorMetodoPago();
+        AG3gananciaPorMetodoPago obj =new AG3gananciaPorMetodoPago();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBGananciaPorMetodoActionPerformed
 
     private void jBGananciaNetaPorFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGananciaNetaPorFechaActionPerformed
         // TODO add your handling code here:
-        AGgananciaNPFecha obj =new AGgananciaNPFecha();
+        AG2gananciaNPFecha obj =new AG2gananciaNPFecha();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBGananciaNetaPorFechaActionPerformed
@@ -423,7 +400,7 @@ public class AGInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jBotonSiguienteActionPerformed
 
     private void jBGananciaPromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGananciaPromedioActionPerformed
-        AgananciaPromPFecha p= new AgananciaPromPFecha();
+        AG1gananciaPromPFecha p= new AG1gananciaPromPFecha();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBGananciaPromedioActionPerformed
@@ -440,42 +417,38 @@ public class AGInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
     private void jBComprasFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBComprasFechaActionPerformed
-        AGcomprasPorFecha p= new AGcomprasPorFecha();
+        AG6comprasPorFecha p= new AG6comprasPorFecha();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBComprasFechaActionPerformed
 
     private void jPropinasCamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPropinasCamActionPerformed
-        ApropinaCamarero obj =new ApropinaCamarero();
+        Ag9propinaCamarero obj =new Ag9propinaCamarero();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPropinasCamActionPerformed
 
     private void jCamMayorPropinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCamMayorPropinaActionPerformed
-        AGcamareroMayorPropina obj =new AGcamareroMayorPropina();
+        AG8camareroMayorPropina obj =new AG8camareroMayorPropina();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jCamMayorPropinaActionPerformed
 
     private void jHistorialComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHistorialComprasActionPerformed
-        AGhistorialCompra p= new AGhistorialCompra();
+        AG5historialCompra p= new AG5historialCompra();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jHistorialComprasActionPerformed
 
     private void jChefMayorPropinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jChefMayorPropinaActionPerformed
-        AGchefMayorPropina obj =new AGchefMayorPropina();
+        AG7chefMayorPropina obj =new AG7chefMayorPropina();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jChefMayorPropinaActionPerformed
 
-    private void jPropinasChef1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPropinasChef1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPropinasChef1ActionPerformed
-
     private void jComprarInsumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComprarInsumoActionPerformed
-        // TODO add your handling code here:
-        AGcomprarInsumo p= new AGcomprarInsumo();
+
+        AG4comprarInsumo p= new AG4comprarInsumo();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jComprarInsumoActionPerformed
@@ -545,6 +518,5 @@ public class AGInicio extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar3;
     private javax.swing.JPanel jPAdminGeneral;
     private javax.swing.JButton jPropinasCam;
-    private javax.swing.JButton jPropinasChef1;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,9 +17,9 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class AgananciaPromPFecha extends javax.swing.JFrame {
+public class AG1gananciaPromPFecha extends javax.swing.JFrame {
 
-    public AgananciaPromPFecha() {
+    public AG1gananciaPromPFecha() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -41,14 +41,14 @@ public class AgananciaPromPFecha extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AgananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AG1gananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
             }
             PreparedStatement st = MySQL.conn.prepareStatement("select promedioGananciaPorDia(" + date + ")");
             ResultSet resultado = st.executeQuery();
             resultado.next();
             numero = resultado.getInt(1);
         } catch (SQLException ex) {
-            Logger.getLogger(AgananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AG1gananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
         }
         return numero;
     }
@@ -89,6 +89,9 @@ public class AgananciaPromPFecha extends javax.swing.JFrame {
             }
         });
 
+        boton.setBackground(new java.awt.Color(0, 102, 102));
+        boton.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        boton.setForeground(new java.awt.Color(255, 255, 255));
         boton.setText("Consultar");
         boton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +99,8 @@ public class AgananciaPromPFecha extends javax.swing.JFrame {
             }
         });
 
-        resultado.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        resultado.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 36)); // NOI18N
+        resultado.setForeground(new java.awt.Color(0, 102, 102));
         resultado.setText("#");
 
         jLabel4.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
@@ -125,31 +129,32 @@ public class AgananciaPromPFecha extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(282, 282, 282)
+                        .addComponent(boton, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(211, 211, 211)
+                        .addComponent(jLabel4)
+                        .addGap(79, 79, 79)
+                        .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(107, Short.MAX_VALUE)
+                .addContainerGap(97, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(fecha))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(inputFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(boton))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(78, 78, 78))
+                        .addComponent(fecha)
+                        .addGap(28, 28, 28)
+                        .addComponent(inputFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(183, 183, 183))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(64, 64, 64))))
+                        .addGap(86, 86, 86))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,18 +165,19 @@ public class AgananciaPromPFecha extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(13, 13, 13)))
-                .addGap(33, 33, 33)
-                .addComponent(jLabel2)
                 .addGap(45, 45, 45)
+                .addComponent(jLabel2)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fecha)
-                    .addComponent(boton)
                     .addComponent(inputFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74)
+                .addGap(18, 18, 18)
+                .addComponent(boton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(129, Short.MAX_VALUE))
+                    .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -182,7 +188,7 @@ public class AgananciaPromPFecha extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
 
         pack();
@@ -193,14 +199,26 @@ public class AgananciaPromPFecha extends javax.swing.JFrame {
     }//GEN-LAST:event_inputFechaActionPerformed
 
     private void botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActionPerformed
-        String fecha = "'" + inputFecha.getText() + "'";
-        resultado.setText(llamar(fecha).toString());
+        try{
+            String fecha = "'" + inputFecha.getText() + "'";
+            resultado.setText(llamar(fecha).toString());
+        }catch(Exception e){
+            WIngresaFecha obj =new WIngresaFecha();
+            obj.setVisible(true);
+         
+        } 
     }//GEN-LAST:event_botonActionPerformed
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        AGInicio obj = new AGInicio();
+         if(Main.sesion.equals("Admin_general")){
+            AGInicio obj =new  AGInicio();
         obj.setVisible(true);
         dispose();
+        }else{
+          ASInicio obj =new ASInicio();
+        obj.setVisible(true);
+        dispose();  
+        }
 
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
@@ -235,7 +253,7 @@ public class AgananciaPromPFecha extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AgananciaPromPFecha().setVisible(true);
+                new AG1gananciaPromPFecha().setVisible(true);
             }
         });
     }

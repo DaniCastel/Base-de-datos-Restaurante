@@ -32,7 +32,7 @@ public class AGInicio2 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Inicio Camarero");
+        setTitle("Inicio Administrador General");
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonSalir.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));

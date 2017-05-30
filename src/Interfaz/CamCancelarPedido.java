@@ -27,10 +27,15 @@ public class CamCancelarPedido extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        setTitle("Cancelar Pedido");
 
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(20, 20, 10));
         jBotonVolver.setIcon(icono);
+        
+        Imagen2 Imagen = new Imagen2(740,420);
+        jPanel1.add(Imagen);
+        jPanel1.repaint();
 
     }
 
@@ -46,8 +51,9 @@ public class CamCancelarPedido extends javax.swing.JFrame {
         idpedido = new javax.swing.JTextField();
         consultar = new javax.swing.JButton();
         jMesa = new javax.swing.JLabel();
-        jBotonVolver = new javax.swing.JButton();
         jMesa1 = new javax.swing.JLabel();
+        jBotonVolver = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -102,12 +108,17 @@ public class CamCancelarPedido extends javax.swing.JFrame {
         jMesa.setForeground(new java.awt.Color(255, 255, 255));
         jMesa.setText("Cancelar pedido");
 
+        jMesa1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jMesa1.setForeground(new java.awt.Color(255, 255, 255));
+        jMesa1.setText("Id pedido:");
+
         jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
         jBotonVolver.setBorder(null);
         jBotonVolver.setBorderPainted(false);
         jBotonVolver.setContentAreaFilled(false);
         jBotonVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBotonVolver.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBotonVolver.setIconTextGap(6);
         jBotonVolver.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jBotonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,17 +126,19 @@ public class CamCancelarPedido extends javax.swing.JFrame {
             }
         });
 
-        jMesa1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
-        jMesa1.setForeground(new java.awt.Color(255, 255, 255));
-        jMesa1.setText("Id pedido:");
+        jLabel1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Volver");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(197, 197, 197)
                 .addComponent(jMesa)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -143,14 +156,15 @@ public class CamCancelarPedido extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jMesa)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                    .addComponent(jMesa)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel1)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(16, 16, 16))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(idpedido, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jMesa1))
@@ -200,7 +214,7 @@ public class CamCancelarPedido extends javax.swing.JFrame {
     }//GEN-LAST:event_consultarActionPerformed
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        CamInicio obj = new CamInicio();
+        CamInicio obj =new  CamInicio();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBotonVolverActionPerformed
@@ -245,6 +259,7 @@ public class CamCancelarPedido extends javax.swing.JFrame {
     private javax.swing.JButton consultar;
     private javax.swing.JTextField idpedido;
     private javax.swing.JButton jBotonVolver;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jMesa;
     private javax.swing.JLabel jMesa1;
     private javax.swing.JPanel jPanel1;

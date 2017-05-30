@@ -14,17 +14,16 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class ApropinaCamarero extends javax.swing.JFrame {
+public class AG5historialCompra extends javax.swing.JFrame {
     
 
     
-    public ApropinaCamarero() {
+    public AG5historialCompra() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Historial de compras");
         imprimirMenu();
-        
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
@@ -37,15 +36,15 @@ public class ApropinaCamarero extends javax.swing.JFrame {
     
     public void imprimirMenu(){
         try {
-   
+
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ApropinaCamarero.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AG5historialCompra.class.getName()).log(Level.SEVERE, null, ex);
             }
-     
+    
             Statement st = MySQL.conn.createStatement();
-            String sql = "Select * from propina_camarero";
+            String sql = "Select * from registro_compra";
             ResultSet rstb = st.executeQuery(sql);
             ResultSetMetaData rsmd = rstb.getMetaData();
             int col = rsmd.getColumnCount();
@@ -63,7 +62,7 @@ public class ApropinaCamarero extends javax.swing.JFrame {
             menu.setModel(modelo);
 
         } catch (SQLException ex) {
-            Logger.getLogger(ApropinaCamarero.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AG5historialCompra.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -85,10 +84,12 @@ public class ApropinaCamarero extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 24)); // NOI18N
-        jLabel2.setText("Propinas: Camareros");
+        jLabel2.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jLabel2.setText("Historial de compras");
 
+        menu.setAutoCreateRowSorter(true);
+        menu.setBackground(new java.awt.Color(240, 240, 240));
+        menu.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 18)); // NOI18N
         menu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -100,6 +101,8 @@ public class ApropinaCamarero extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        menu.setGridColor(new java.awt.Color(0, 0, 0));
+        menu.setRowHeight(25);
         jScrollPane1.setViewportView(menu);
 
         jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
@@ -127,34 +130,31 @@ public class ApropinaCamarero extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(171, 171, 171)
-                        .addComponent(jLabel2)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                        .addGap(163, 163, 163)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(13, 13, 13)))))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel1)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(16, 16, 16))))
+                .addGap(41, 41, 41)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -209,7 +209,7 @@ public class ApropinaCamarero extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ApropinaCamarero().setVisible(true);
+                new AG5historialCompra().setVisible(true);
             }
         });
     }

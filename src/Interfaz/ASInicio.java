@@ -65,14 +65,16 @@ public class ASInicio extends javax.swing.JFrame {
         jPropinasCam = new javax.swing.JButton();
         jCamMayorPropina = new javax.swing.JButton();
         jChefMayorPropina = new javax.swing.JButton();
-        jPropinasChef = new javax.swing.JButton();
         jAdminGral1 = new javax.swing.JLabel();
         jBGananciaPromedio = new javax.swing.JButton();
         jPlatoMenosVendido = new javax.swing.JButton();
         jPlatoMasVendido = new javax.swing.JButton();
         jAdminGral2 = new javax.swing.JLabel();
-        jInsumosContables = new javax.swing.JButton();
+        jComprasporFecha = new javax.swing.JButton();
         jAdminGral3 = new javax.swing.JLabel();
+        jInsumosContables1 = new javax.swing.JButton();
+        jInsumosPeso = new javax.swing.JButton();
+        jPropinasChef = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -188,16 +190,6 @@ public class ASInicio extends javax.swing.JFrame {
             }
         });
 
-        jPropinasChef.setBackground(new java.awt.Color(0, 102, 102));
-        jPropinasChef.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
-        jPropinasChef.setForeground(new java.awt.Color(255, 255, 255));
-        jPropinasChef.setText("Chefs");
-        jPropinasChef.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPropinasChefActionPerformed(evt);
-            }
-        });
-
         jAdminGral1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jAdminGral1.setText("Propinas");
 
@@ -234,18 +226,48 @@ public class ASInicio extends javax.swing.JFrame {
         jAdminGral2.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jAdminGral2.setText("Estadísticas");
 
-        jInsumosContables.setBackground(new java.awt.Color(0, 102, 102));
-        jInsumosContables.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
-        jInsumosContables.setForeground(new java.awt.Color(255, 255, 255));
-        jInsumosContables.setText("Insumos Contable");
-        jInsumosContables.addActionListener(new java.awt.event.ActionListener() {
+        jComprasporFecha.setBackground(new java.awt.Color(0, 102, 102));
+        jComprasporFecha.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jComprasporFecha.setForeground(new java.awt.Color(255, 255, 255));
+        jComprasporFecha.setText("Compras por fecha");
+        jComprasporFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jInsumosContablesActionPerformed(evt);
+                jComprasporFechaActionPerformed(evt);
             }
         });
 
         jAdminGral3.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jAdminGral3.setText("Insumos");
+
+        jInsumosContables1.setBackground(new java.awt.Color(0, 102, 102));
+        jInsumosContables1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jInsumosContables1.setForeground(new java.awt.Color(255, 255, 255));
+        jInsumosContables1.setText("Insumos Contables");
+        jInsumosContables1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jInsumosContables1ActionPerformed(evt);
+            }
+        });
+
+        jInsumosPeso.setBackground(new java.awt.Color(0, 102, 102));
+        jInsumosPeso.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jInsumosPeso.setForeground(new java.awt.Color(255, 255, 255));
+        jInsumosPeso.setText("Insumos Peso");
+        jInsumosPeso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jInsumosPesoActionPerformed(evt);
+            }
+        });
+
+        jPropinasChef.setBackground(new java.awt.Color(0, 102, 102));
+        jPropinasChef.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
+        jPropinasChef.setForeground(new java.awt.Color(255, 255, 255));
+        jPropinasChef.setText("Chefs");
+        jPropinasChef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPropinasChefActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPAdminGeneralLayout = new javax.swing.GroupLayout(jPAdminGeneral);
         jPAdminGeneral.setLayout(jPAdminGeneralLayout);
@@ -264,25 +286,31 @@ public class ASInicio extends javax.swing.JFrame {
                     .addGroup(jPAdminGeneralLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPAdminGeneralLayout.createSequentialGroup()
-                                .addComponent(jBComprasFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPAdminGeneralLayout.createSequentialGroup()
-                                .addComponent(jPlatoMenosVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jCamMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPAdminGeneralLayout.createSequentialGroup()
                                 .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jPlatoMasVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
-                                        .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jInsumosContables, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPropinasChef, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jChefMayorPropina, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
+                                        .addComponent(jInsumosPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jCamMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
+                                        .addComponent(jInsumosContables1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jChefMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPAdminGeneralLayout.createSequentialGroup()
+                                .addComponent(jBComprasFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPropinasChef, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPAdminGeneralLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jPlatoMenosVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21)
+                                .addComponent(jComprasporFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(45, 45, 45))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPAdminGeneralLayout.createSequentialGroup()
                 .addGap(69, 69, 69)
@@ -311,21 +339,23 @@ public class ASInicio extends javax.swing.JFrame {
                     .addComponent(jAdminGral3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPropinasChef, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBGananciaPromedio, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jInsumosContables, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jInsumosContables1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jChefMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jChefMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPlatoMasVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPlatoMasVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCamMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jInsumosPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCamMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPlatoMenosVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPlatoMenosVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComprasporFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBComprasFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jBComprasFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPropinasChef, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52))
         );
 
@@ -333,7 +363,7 @@ public class ASInicio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPAdminGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
+            .addComponent(jPAdminGeneral, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -355,58 +385,72 @@ public class ASInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
     private void jBComprasFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBComprasFechaActionPerformed
-        AGcomprasPorFecha p= new AGcomprasPorFecha();
+        AScomprasPorFecha p= new AScomprasPorFecha();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBComprasFechaActionPerformed
 
     private void jPropinasCamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPropinasCamActionPerformed
-        ApropinaCamarero obj =new ApropinaCamarero();
+        ASpropinaCamarero obj =new ASpropinaCamarero();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPropinasCamActionPerformed
 
     private void jCamMayorPropinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCamMayorPropinaActionPerformed
-       AGcamareroMayorPropina obj =new AGcamareroMayorPropina();
+       AScamMayorPropinaSede obj =new AScamMayorPropinaSede();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jCamMayorPropinaActionPerformed
 
     private void jChefMayorPropinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jChefMayorPropinaActionPerformed
-        AGchefMayorPropina obj =new AGchefMayorPropina();
+        ASchefMayorPropinaSede obj =new ASchefMayorPropinaSede();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jChefMayorPropinaActionPerformed
 
-    private void jPropinasChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPropinasChefActionPerformed
-        ApropinaChef p= new ApropinaChef();
-        p.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jPropinasChefActionPerformed
-
     private void jBGananciaPromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGananciaPromedioActionPerformed
-        AgananciaPromPFecha p= new AgananciaPromPFecha();
+        AG1gananciaPromPFecha p= new AG1gananciaPromPFecha();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBGananciaPromedioActionPerformed
 
     private void jPlatoMenosVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatoMenosVendidoActionPerformed
-        AplatoMenosVendido p= new AplatoMenosVendido();
+        AplatoMenosVendidoSede p= new AplatoMenosVendidoSede();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPlatoMenosVendidoActionPerformed
 
     private void jPlatoMasVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatoMasVendidoActionPerformed
-        AplatoMasVendido p= new AplatoMasVendido();
+        AplatoMasVendidoSede p= new AplatoMasVendidoSede();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPlatoMasVendidoActionPerformed
 
-    private void jInsumosContablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsumosContablesActionPerformed
-        AGinventarioContable p= new AGinventarioContable();
+    private void jComprasporFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComprasporFechaActionPerformed
+        AScomprasPorFecha p= new AScomprasPorFecha();
         p.setVisible(true);
         dispose();
-    }//GEN-LAST:event_jInsumosContablesActionPerformed
+    }//GEN-LAST:event_jComprasporFechaActionPerformed
+
+    private void jInsumosContables1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsumosContables1ActionPerformed
+
+        AGinventarioContable obj =new  AGinventarioContable();
+        obj.setVisible(true);
+        dispose();
+       
+    }//GEN-LAST:event_jInsumosContables1ActionPerformed
+
+    private void jInsumosPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsumosPesoActionPerformed
+       AGinventarioPeso obj =new  AGinventarioPeso();
+        obj.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jInsumosPesoActionPerformed
+
+    private void jPropinasChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPropinasChefActionPerformed
+        ASpropinaChefSede obj =new  ASpropinaChefSede();
+        obj.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jPropinasChefActionPerformed
 
     /**
      * @param args the command line arguments
@@ -455,10 +499,12 @@ public class ASInicio extends javax.swing.JFrame {
     private javax.swing.JButton jBotonVolver;
     private javax.swing.JButton jCamMayorPropina;
     private javax.swing.JButton jChefMayorPropina;
+    private javax.swing.JButton jComprasporFecha;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
-    private javax.swing.JButton jInsumosContables;
+    private javax.swing.JButton jInsumosContables1;
+    private javax.swing.JButton jInsumosPeso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;

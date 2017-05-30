@@ -22,7 +22,7 @@ public class AplatoMenosVendido extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Plato menos vendido");
         imprimirMenu();
         
         

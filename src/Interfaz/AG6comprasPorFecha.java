@@ -17,11 +17,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class AGcomprasPorFecha extends javax.swing.JFrame {
+public class AG6comprasPorFecha extends javax.swing.JFrame {
     
 
     
-    public AGcomprasPorFecha() {
+    public AG6comprasPorFecha() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -45,7 +45,7 @@ public class AGcomprasPorFecha extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AGcomprasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AG6comprasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
             }
        
             PreparedStatement st = MySQL.conn.prepareStatement("select contarCompraPorFecha("+date+")");
@@ -54,7 +54,7 @@ public class AGcomprasPorFecha extends javax.swing.JFrame {
             numero = resultado.getInt(1);
 
         } catch (SQLException ex) {
-            Logger.getLogger(AGcomprasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AG6comprasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
         }
         return numero;
     }
@@ -240,7 +240,7 @@ public class AGcomprasPorFecha extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AGcomprasPorFecha().setVisible(true);
+                new AG6comprasPorFecha().setVisible(true);
             }
         });
     }

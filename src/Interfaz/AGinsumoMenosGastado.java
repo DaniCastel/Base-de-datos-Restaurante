@@ -22,7 +22,7 @@ public class AGinsumoMenosGastado extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Insumo menos gastado");
         imprimirMenu();
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));

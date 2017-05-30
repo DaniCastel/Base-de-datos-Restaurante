@@ -23,7 +23,7 @@ public class AplatoMenosVendidoSede extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Plato menos vendido-SEDE");
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
@@ -219,15 +219,11 @@ public class AplatoMenosVendidoSede extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        if(Main.sesion.equals("Cliente")){
-            CliInicio obj =new  CliInicio();
-        obj.setVisible(true);
-        dispose();
-        }else{
-          AGInicio obj =new AGInicio();
+        
+          ASInicio obj =new ASInicio();
         obj.setVisible(true);
         dispose();  
-        }
+        
         
         
     }//GEN-LAST:event_jBotonVolverActionPerformed

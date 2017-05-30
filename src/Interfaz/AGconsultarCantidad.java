@@ -25,14 +25,12 @@ public class AGconsultarCantidad extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+        setTitle("Consultar cantidad de insumos");
 
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(20, 20, 10));
         jBotonVolver.setIcon(icono);
         
-        
-        
-       
         Imagen1 Imagen = new Imagen1(740,420);
         jPanel1.add(Imagen);
         jPanel1.repaint();

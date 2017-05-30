@@ -22,7 +22,7 @@ public class AGPlatosVendidos extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Platos Vendidos");
         imprimirMenu();
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonSalir.png"));

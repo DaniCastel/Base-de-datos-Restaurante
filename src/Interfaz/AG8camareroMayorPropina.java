@@ -14,26 +14,27 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class AGgananciaPorMetodoPago extends javax.swing.JFrame {
+public class AG8camareroMayorPropina extends javax.swing.JFrame {
     
 
     
-    public AGgananciaPorMetodoPago() {
+    public AG8camareroMayorPropina() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Login");
+        setTitle("Camarero con mayor propina");
         imprimirMenu();
         
-        
-        
-         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
+        ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
         jBotonVolver.setIcon(icono);
         
+       
         Imagen1 Imagen = new Imagen1(740,420);
         jPanel1.add(Imagen);
         jPanel1.repaint();
+        
+        
     }
     
     public void imprimirMenu(){
@@ -42,11 +43,11 @@ public class AGgananciaPorMetodoPago extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AGgananciaPorMetodoPago.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AG8camareroMayorPropina.class.getName()).log(Level.SEVERE, null, ex);
             }
- 
+            
             Statement st = MySQL.conn.createStatement();
-            String sql = "Select * from metodos_pago";
+            String sql = "Select * from cam_mayor_propina";
             ResultSet rstb = st.executeQuery(sql);
             ResultSetMetaData rsmd = rstb.getMetaData();
             int col = rsmd.getColumnCount();
@@ -64,7 +65,7 @@ public class AGgananciaPorMetodoPago extends javax.swing.JFrame {
             menu.setModel(modelo);
 
         } catch (SQLException ex) {
-            Logger.getLogger(AGgananciaPorMetodoPago.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AG8camareroMayorPropina.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -75,9 +76,6 @@ public class AGgananciaPorMetodoPago extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         menu = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        sede = new java.awt.TextField();
-        consultar = new javax.swing.JButton();
         jBotonVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -90,8 +88,9 @@ public class AGgananciaPorMetodoPago extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 24)); // NOI18N
-        jLabel2.setText("Ganancias por metodo de pago");
+        jLabel2.setText("Camarero con mayor propina");
 
+        menu.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         menu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -103,26 +102,8 @@ public class AGgananciaPorMetodoPago extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        menu.setRowHeight(25);
         jScrollPane1.setViewportView(menu);
-
-        jLabel3.setFont(new java.awt.Font("Lucida Calligraphy", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Sede:");
-
-        sede.setForeground(new java.awt.Color(102, 102, 255));
-        sede.setText("Todas");
-        sede.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sedeActionPerformed(evt);
-            }
-        });
-
-        consultar.setText("Consultar");
-        consultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultarActionPerformed(evt);
-            }
-        });
 
         jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
         jBotonVolver.setBorder(null);
@@ -146,29 +127,21 @@ public class AGgananciaPorMetodoPago extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(166, 166, 166))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(684, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(261, 261, 261)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(sede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(consultar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(167, 167, 167))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,16 +152,11 @@ public class AGgananciaPorMetodoPago extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel2)
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(sede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(consultar))
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addGap(64, 64, 64)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(200, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -199,52 +167,17 @@ public class AGgananciaPorMetodoPago extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void sedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sedeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sedeActionPerformed
-
-    private void consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarActionPerformed
-        try {
-
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
-            }
-           
-            Statement st = MySQL.conn.createStatement();
-            String sql = "Select * from metodos_pago where (fac_sed_id = " + sede.getText() +") " ;
-            ResultSet rstb = st.executeQuery(sql);
-            ResultSetMetaData rsmd = rstb.getMetaData();
-            int col = rsmd.getColumnCount();
-            DefaultTableModel modelo = new DefaultTableModel();
-            for (int i = 1; i <= col; i++) {
-                modelo.addColumn(rsmd.getColumnLabel(i));
-            }
-            while (rstb.next()){
-                String fila[] = new String [col];
-                for (int j = 0; j < col; j++) {
-                    fila[j] = rstb.getString(j+1);
-                }
-                modelo.addRow(fila);
-            }
-            menu.setModel(modelo);
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_consultarActionPerformed
-
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
         AGInicio obj =new AGInicio();
         obj.setVisible(true);
         dispose();
+
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
     /**
@@ -279,20 +212,17 @@ public class AGgananciaPorMetodoPago extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AGgananciaPorMetodoPago().setVisible(true);
+                new AG8camareroMayorPropina().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton consultar;
     private javax.swing.JButton jBotonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable menu;
-    private java.awt.TextField sede;
     // End of variables declaration//GEN-END:variables
 }

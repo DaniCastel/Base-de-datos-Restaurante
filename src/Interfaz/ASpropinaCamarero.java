@@ -21,7 +21,7 @@ public class ASpropinaCamarero extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        setTitle("Login");
+        setTitle("Propinas de camareros");
         imprimirMenu();
 
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
@@ -201,7 +201,7 @@ public class ASpropinaCamarero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        AGInicio obj = new AGInicio();
+        ASInicio obj = new ASInicio();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBotonVolverActionPerformed
