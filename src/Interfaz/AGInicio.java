@@ -423,7 +423,7 @@ public class AGInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jBComprasFechaActionPerformed
 
     private void jPropinasCamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPropinasCamActionPerformed
-        AG9propinaCamarero obj =new AG9propinaCamarero();
+        ASpropinaCamarero obj =new ASpropinaCamarero();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPropinasCamActionPerformed

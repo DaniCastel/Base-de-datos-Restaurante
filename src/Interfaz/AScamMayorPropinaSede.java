@@ -24,8 +24,9 @@ public class AScamMayorPropinaSede extends javax.swing.JFrame {
         setLocationRelativeTo(null); 
         setResizable(false);
         setTitle("Camarero con mayor propina");
-        imprimirMenu();
+        sede.setText("1");
         
+        imprimirMenu();
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
@@ -49,6 +50,8 @@ public class AScamMayorPropinaSede extends javax.swing.JFrame {
             CallableStatement cStmt;
             cStmt = MySQL.conn.prepareCall("{call proc_propina_cam_sede_may(?)}");
             MySQL.conn.setAutoCommit(true);
+            
+            
 
             cStmt.setInt(1, Integer.valueOf(sede.getText()));
             cStmt.execute();

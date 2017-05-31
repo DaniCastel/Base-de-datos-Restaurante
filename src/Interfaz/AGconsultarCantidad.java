@@ -101,7 +101,6 @@ public class AGconsultarCantidad extends javax.swing.JFrame {
         consultar.setForeground(new java.awt.Color(255, 255, 255));
         consultar.setText("Consultar");
         consultar.setBorderPainted(false);
-        consultar.setContentAreaFilled(false);
         consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultarActionPerformed(evt);
