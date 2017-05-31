@@ -25,7 +25,7 @@ public class Rec1factura extends javax.swing.JFrame {
         setTitle("Facturas");
         imprimirMenu();
         
-        ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonSalir.png"));
+        ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
         jBotonVolver.setIcon(icono);
         

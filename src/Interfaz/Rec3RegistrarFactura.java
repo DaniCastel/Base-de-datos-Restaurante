@@ -328,7 +328,7 @@ public class Rec3RegistrarFactura extends javax.swing.JFrame {
 
             } catch (Exception e) {
 
-                WPedidoNOAgregado obj =new WPedidoNOAgregado();
+                WFacturaNORegistrada obj =new WFacturaNORegistrada();
                 obj.setVisible(true);
                 
                 Logger.getLogger(Rec3RegistrarFactura.class.getName()).log(Level.SEVERE, null, e);

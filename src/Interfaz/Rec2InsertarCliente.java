@@ -36,7 +36,7 @@ public class Rec2InsertarCliente extends javax.swing.JFrame {
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
         jBotonVolver1.setIcon(icono);
         
-        Imagen1 Imagen = new Imagen1(740,420);
+        Imagen2 Imagen = new Imagen2(740,420);
         jPanel1.add(Imagen);
         jPanel1.repaint();
         
@@ -66,11 +66,12 @@ public class Rec2InsertarCliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
         jSaludo.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jSaludo.setForeground(new java.awt.Color(255, 255, 255));
         jSaludo.setText("Insertar cliente");
 
         nombre.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +91,7 @@ public class Rec2InsertarCliente extends javax.swing.JFrame {
         });
 
         jMesa.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jMesa.setForeground(new java.awt.Color(255, 255, 255));
         jMesa.setText("Nombre");
 
         apellido.addActionListener(new java.awt.event.ActionListener() {
@@ -99,9 +101,11 @@ public class Rec2InsertarCliente extends javax.swing.JFrame {
         });
 
         jPlato.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jPlato.setForeground(new java.awt.Color(255, 255, 255));
         jPlato.setText("Apellido");
 
         cantidadLabel.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        cantidadLabel.setForeground(new java.awt.Color(255, 255, 255));
         cantidadLabel.setText("Telefono");
 
         telefono.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +129,7 @@ public class Rec2InsertarCliente extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 11)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Volver");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
