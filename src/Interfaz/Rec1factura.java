@@ -63,7 +63,7 @@ public class Rec1factura extends javax.swing.JFrame {
                 modelo.addRow(fila);
             }
             menu.setModel(modelo);
-            MySQL.conn.close();
+ 
         } catch (SQLException ex) {
             Logger.getLogger(Rec1factura.class.getName()).log(Level.SEVERE, null, ex);
         }
