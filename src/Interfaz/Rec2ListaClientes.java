@@ -14,11 +14,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class listaClientes extends javax.swing.JFrame {
+public class Rec2ListaClientes extends javax.swing.JFrame {
     
 
     
-    public listaClientes() {
+    public Rec2ListaClientes() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -40,7 +40,7 @@ public class listaClientes extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(listaClientes.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Rec2ListaClientes.class.getName()).log(Level.SEVERE, null, ex);
             }
     
             Statement st = MySQL.conn.createStatement();
@@ -62,7 +62,7 @@ public class listaClientes extends javax.swing.JFrame {
             menu.setModel(modelo);
 
         } catch (SQLException ex) {
-            Logger.getLogger(listaClientes.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Rec2ListaClientes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -209,7 +209,7 @@ public class listaClientes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new listaClientes().setVisible(true);
+                new Rec2ListaClientes().setVisible(true);
             }
         });
     }

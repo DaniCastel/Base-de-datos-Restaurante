@@ -19,11 +19,11 @@ import restaurante.*;
 import static restaurante.MySQL.conn;
 
 
-public class insertarCliente extends javax.swing.JFrame {
+public class Rec1InsertarCliente extends javax.swing.JFrame {
 
 
     
-    public insertarCliente() {
+    public Rec1InsertarCliente() {
         
         initComponents();
         setLocationRelativeTo(null); 
@@ -235,7 +235,7 @@ public class insertarCliente extends javax.swing.JFrame {
              cStmt.close();
 
         }catch (Exception e) {  
-                     Logger.getLogger(insertarCliente.class.getName()).log(Level.SEVERE, null, e);
+                     Logger.getLogger(Rec1InsertarCliente.class.getName()).log(Level.SEVERE, null, e);
 
         }
              
@@ -250,7 +250,7 @@ public class insertarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_telefonoActionPerformed
 
     private void jBotonVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolver1ActionPerformed
-        AGInicio obj =new AGInicio();
+        RecInicio obj =new RecInicio();
         obj.setVisible(true);
         dispose();
 
@@ -288,7 +288,7 @@ public class insertarCliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new insertarCliente().setVisible(true);
+                new Rec1InsertarCliente().setVisible(true);
             }
         });
     }

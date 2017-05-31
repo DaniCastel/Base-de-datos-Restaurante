@@ -187,7 +187,7 @@ public class ChefInicio extends javax.swing.JFrame {
     private void jBMisPropinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMisPropinasActionPerformed
          try{
             idChef = Integer.parseInt(jFChefId.getText());
-        ChefPropinaslDia p= new ChefPropinaslDia();
+        Chef1PropinaslDia p= new Chef1PropinaslDia();
         p.setVisible(true);
         dispose();
         }catch(Exception e){

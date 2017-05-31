@@ -10,16 +10,17 @@ package Interfaz;
  * @author dennis660
  */
 public class WPedidoCancelado extends javax.swing.JFrame {
-
+    Cam1CancelarPedido c;
     /**
      * Creates new form ConIncorrecto
      */
-    public WPedidoCancelado() {
+    public WPedidoCancelado( Cam1CancelarPedido c) {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
         setTitle("Pedido  Agregado");
+        this.c = c;
     }
 
     /**
@@ -96,6 +97,7 @@ public class WPedidoCancelado extends javax.swing.JFrame {
         CamInicio obj2 =new  CamInicio();
             obj2.setVisible(true);
             dispose();
+            c.dispose();
     }//GEN-LAST:event_jBOKActionPerformed
 
     /**
@@ -127,8 +129,13 @@ public class WPedidoCancelado extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run( Cam1CancelarPedido c) {
+                new WPedidoCancelado(c).setVisible(true);
+            }
+
+            @Override
             public void run() {
-                new WPedidoCancelado().setVisible(true);
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
     }

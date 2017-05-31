@@ -46,11 +46,11 @@ public class CamInicio extends javax.swing.JFrame {
         jCamID = new javax.swing.JLabel();
         jBMisPropinas = new javax.swing.JButton();
         jBAgregarPedido = new javax.swing.JButton();
-        jBEntregarPedido = new javax.swing.JButton();
         jBotonVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jClientesAtendidos = new javax.swing.JButton();
         jCancelarPedido = new javax.swing.JButton();
+        jBEntregarPedido1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -96,17 +96,6 @@ public class CamInicio extends javax.swing.JFrame {
             }
         });
 
-        jBEntregarPedido.setBackground(new java.awt.Color(51, 51, 51));
-        jBEntregarPedido.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        jBEntregarPedido.setForeground(new java.awt.Color(255, 255, 255));
-        jBEntregarPedido.setText("Entregar Pedido");
-        jBEntregarPedido.setBorderPainted(false);
-        jBEntregarPedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBEntregarPedidoActionPerformed(evt);
-            }
-        });
-
         jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
         jBotonVolver.setBorder(null);
         jBotonVolver.setBorderPainted(false);
@@ -148,6 +137,17 @@ public class CamInicio extends javax.swing.JFrame {
             }
         });
 
+        jBEntregarPedido1.setBackground(new java.awt.Color(51, 51, 51));
+        jBEntregarPedido1.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        jBEntregarPedido1.setForeground(new java.awt.Color(255, 255, 255));
+        jBEntregarPedido1.setText("Entregar Pedido");
+        jBEntregarPedido1.setBorderPainted(false);
+        jBEntregarPedido1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEntregarPedido1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -172,14 +172,14 @@ public class CamInicio extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jClientesAtendidos, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
                     .addComponent(jBAgregarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jBEntregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(jBEntregarPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jCancelarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(214, 214, 214)
+                        .addGap(207, 207, 207)
                         .addComponent(jBMisPropinas, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(60, 60, 60))
         );
@@ -204,8 +204,8 @@ public class CamInicio extends javax.swing.JFrame {
                         .addGap(63, 63, 63)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jBAgregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBEntregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCancelarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jCancelarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBEntregarPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jClientesAtendidos, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -262,22 +262,6 @@ public class CamInicio extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jBAgregarPedidoActionPerformed
 
-    private void jBEntregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEntregarPedidoActionPerformed
-         try{
-           idCam = Integer.parseInt(jFCamId.getText());
-        CamPedidosPendientes p= new CamPedidosPendientes();
-        p.setVisible(true);
-        dispose();
-        }catch(Exception e){
-             WIngresaID p= new WIngresaID();
-            p.setVisible(true);
-           
-        } 
-        
-        
-        
-    }//GEN-LAST:event_jBEntregarPedidoActionPerformed
-
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
         Login obj =new Login();
         obj.setVisible(true);
@@ -303,10 +287,14 @@ public class CamInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jClientesAtendidosActionPerformed
 
     private void jCancelarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCancelarPedidoActionPerformed
-        CamCancelarPedido p= new CamCancelarPedido();
+        Cam1CancelarPedido p= new Cam1CancelarPedido();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jCancelarPedidoActionPerformed
+
+    private void jBEntregarPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEntregarPedido1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBEntregarPedido1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -347,7 +335,7 @@ public class CamInicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAgregarPedido;
-    private javax.swing.JButton jBEntregarPedido;
+    private javax.swing.JButton jBEntregarPedido1;
     private javax.swing.JButton jBMisPropinas;
     private javax.swing.JButton jBotonVolver;
     private javax.swing.JLabel jCamID;

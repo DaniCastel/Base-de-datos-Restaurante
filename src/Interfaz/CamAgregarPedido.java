@@ -252,7 +252,7 @@ public class CamAgregarPedido extends javax.swing.JFrame {
 
                 cStmt.close();
 
-                WPedidoAgregado obj =new WPedidoAgregado();
+                WPedidoAgregado obj =new WPedidoAgregado(this);
                 obj.setVisible(true);
 
             } catch (Exception e) {

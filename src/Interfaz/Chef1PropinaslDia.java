@@ -4,12 +4,10 @@ import static Interfaz.CamInicio.idCam;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Types;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,22 +18,56 @@ import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 import static restaurante.MySQL.conn;
 
-public class CamCancelarPedido extends javax.swing.JFrame {
+public class Chef1PropinaslDia extends javax.swing.JFrame {
 
-    public CamCancelarPedido() {
+    public Chef1PropinaslDia() {
 
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
-        setTitle("Cancelar Pedido");
 
-        ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
+        ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver.png"));
         Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(20, 20, 10));
         jBotonVolver.setIcon(icono);
         
         Imagen2 Imagen = new Imagen2(740,420);
         jPanel1.add(Imagen);
         jPanel1.repaint();
+        
+         try {
+            // Creamos la conexion  
+            CallableStatement cStmt;
+            Class.forName("com.mysql.jdbc.Driver");
+           
+            cStmt = MySQL.conn.prepareCall("{call pc_propinas_dia_chef(?)}");
+            MySQL.conn.setAutoCommit(true);
+
+            cStmt.setInt(1, ChefInicio.idChef);
+
+            cStmt.execute();
+            ResultSet rstb = cStmt.getResultSet();
+            ResultSetMetaData rsmd = rstb.getMetaData();
+            int col = rsmd.getColumnCount();
+            DefaultTableModel modelo = new DefaultTableModel();
+            for (int i = 1; i <= col; i++) {
+                modelo.addColumn(rsmd.getColumnLabel(i));
+            }
+            while (rstb.next()) {
+                String fila[] = new String[col];
+                for (int j = 0; j < col; j++) {
+                    fila[j] = rstb.getString(j + 1);
+                }
+                modelo.addRow(fila);
+            }
+            resultado.setModel(modelo);
+            cStmt.close();
+        } catch (Exception e) {
+            Logger.getLogger(Chef1PropinaslDia.class.getName()).log(Level.SEVERE, null, e);
+
+        }
+
+        
+        
 
     }
 
@@ -48,10 +80,9 @@ public class CamCancelarPedido extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        idpedido = new javax.swing.JTextField();
-        consultar = new javax.swing.JButton();
         jMesa = new javax.swing.JLabel();
-        jMesa1 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        resultado = new javax.swing.JTable();
         jBotonVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -84,33 +115,28 @@ public class CamCancelarPedido extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
-        idpedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idpedidoActionPerformed(evt);
-            }
-        });
-
-        consultar.setBackground(new java.awt.Color(0, 153, 153));
-        consultar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        consultar.setForeground(new java.awt.Color(255, 255, 255));
-        consultar.setText("Cancelar");
-        consultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                consultarActionPerformed(evt);
-            }
-        });
-
-        jMesa.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
+        jMesa.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 24)); // NOI18N
         jMesa.setForeground(new java.awt.Color(255, 255, 255));
-        jMesa.setText("Cancelar pedido");
+        jMesa.setText("Mis propinas del día");
 
-        jMesa1.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
-        jMesa1.setForeground(new java.awt.Color(255, 255, 255));
-        jMesa1.setText("Id pedido:");
+        resultado.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        resultado.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        resultado.setRowHeight(40);
+        jScrollPane3.setViewportView(resultado);
 
         jBotonVolver.setBackground(new java.awt.Color(153, 0, 0));
         jBotonVolver.setBorder(null);
@@ -135,86 +161,50 @@ public class CamCancelarPedido extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(197, 197, 197)
-                .addComponent(jMesa)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(259, 259, 259))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(166, Short.MAX_VALUE)
-                .addComponent(jMesa1)
-                .addGap(106, 106, 106)
-                .addComponent(idpedido, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(145, 145, 145))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(222, 222, 222)
+                        .addComponent(jMesa))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jMesa)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel1)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(16, 16, 16))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(idpedido, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jMesa1))
-                .addGap(94, 94, 94)
-                .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
+                .addGap(16, 16, 16)
+                .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addGap(9, 9, 9)
+                .addComponent(jMesa)
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(209, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 719, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void idpedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idpedidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idpedidoActionPerformed
-
-    private void consultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarActionPerformed
-
-        try {
-            // Creamos la conexion  
-            PreparedStatement cStmt;
-            Class.forName("com.mysql.jdbc.Driver");
-           
-            cStmt = MySQL.conn.prepareStatement("select cancelar_pedido("+ idpedido.getText()+")");
-            ResultSet resultado = cStmt.executeQuery();
-            resultado.next();
-            int numero = resultado.getInt(1); //1 si es cancelado,  0 si no
-            cStmt.close();  // ACA VA TRYCATCH 
-        } catch (Exception e) {
-            Logger.getLogger(CamCancelarPedido.class.getName()).log(Level.SEVERE, null, e);
-
-        }
-
-    }//GEN-LAST:event_consultarActionPerformed
-
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        CamInicio obj =new  CamInicio();
+        ChefInicio obj =new  ChefInicio();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBotonVolverActionPerformed
@@ -250,22 +240,21 @@ public class CamCancelarPedido extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CamCancelarPedido().setVisible(true);
+                new Chef1PropinaslDia().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton consultar;
-    private javax.swing.JTextField idpedido;
     private javax.swing.JButton jBotonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jMesa;
-    private javax.swing.JLabel jMesa1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable resultado;
     // End of variables declaration//GEN-END:variables
 }

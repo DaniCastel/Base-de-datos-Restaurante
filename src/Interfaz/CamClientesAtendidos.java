@@ -170,7 +170,7 @@ public class CamClientesAtendidos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        ChefInicio obj =new  ChefInicio();
+        CamInicio obj =new  CamInicio();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBotonVolverActionPerformed

@@ -14,11 +14,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class Recfactura extends javax.swing.JFrame {
+public class Rec3factura extends javax.swing.JFrame {
     
 
     
-    public Recfactura() {
+    public Rec3factura() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -43,11 +43,11 @@ public class Recfactura extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Recfactura.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Rec3factura.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             Statement st = MySQL.conn.createStatement();
-            String sql = "select * from fact where fac_sed_id="+Main.sedeid+"";
+            String sql = "select * from fact where Sede="+Main.sedeid+"";
             ResultSet rstb = st.executeQuery(sql);
             ResultSetMetaData rsmd = rstb.getMetaData();
             int col = rsmd.getColumnCount();
@@ -65,7 +65,7 @@ public class Recfactura extends javax.swing.JFrame {
             menu.setModel(modelo);
             MySQL.conn.close();
         } catch (SQLException ex) {
-            Logger.getLogger(Recfactura.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Rec3factura.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -206,7 +206,7 @@ public class Recfactura extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Recfactura().setVisible(true);
+                new Rec3factura().setVisible(true);
             }
         });
     }
