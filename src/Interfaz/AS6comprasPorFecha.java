@@ -17,11 +17,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class AS4comprasPorFecha extends javax.swing.JFrame {
+public class AS6comprasPorFecha extends javax.swing.JFrame {
     
 
     
-    public AS4comprasPorFecha() {
+    public AS6comprasPorFecha() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -45,16 +45,16 @@ public class AS4comprasPorFecha extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AS4comprasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AS6comprasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
             }
        
-            PreparedStatement st = MySQL.conn.prepareStatement("select contarCompraPorFecha('"+date+ "',"+ sde +")");
+            PreparedStatement st = MySQL.conn.prepareStatement("select contarCompraPorFechaSede('"+date+ "',"+ sde +")");
             ResultSet resultado = st.executeQuery();
             resultado.next();
             numero = resultado.getInt(1);
 
         } catch (SQLException ex) {
-            Logger.getLogger(AS4comprasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AS6comprasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
         }
         return numero;
     }
@@ -269,7 +269,7 @@ public class AS4comprasPorFecha extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AS4comprasPorFecha().setVisible(true);
+                new AS6comprasPorFecha().setVisible(true);
             }
         });
     }

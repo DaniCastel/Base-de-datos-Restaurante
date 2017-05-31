@@ -371,25 +371,25 @@ public class ASInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
     private void jBComprasFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBComprasFechaActionPerformed
-        AS4comprasPorFecha p= new AS4comprasPorFecha();
+        AS6comprasPorFecha p= new AS6comprasPorFecha();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBComprasFechaActionPerformed
 
     private void jPropinasCamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPropinasCamActionPerformed
-        ASpropinaCamarero obj =new ASpropinaCamarero();
+        AS9propinaCamarero obj =new AS9propinaCamarero();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPropinasCamActionPerformed
 
     private void jCamMayorPropinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCamMayorPropinaActionPerformed
-       AScamMayorPropinaSede obj =new AScamMayorPropinaSede();
+       AS8camMayorPropinaSede obj =new AS8camMayorPropinaSede();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jCamMayorPropinaActionPerformed
 
     private void jChefMayorPropinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jChefMayorPropinaActionPerformed
-        ASchefMayorPropinaSede obj =new ASchefMayorPropinaSede();
+        AS7chefMayorPropinaSede obj =new AS7chefMayorPropinaSede();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jChefMayorPropinaActionPerformed
@@ -414,20 +414,20 @@ public class ASInicio extends javax.swing.JFrame {
 
     private void jInsumosContables1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsumosContables1ActionPerformed
 
-        A0inventarioContable obj =new  A0inventarioContable();
+        AS4inventarioContable obj =new  AS4inventarioContable();
         obj.setVisible(true);
         dispose();
        
     }//GEN-LAST:event_jInsumosContables1ActionPerformed
 
     private void jInsumosPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsumosPesoActionPerformed
-       A1inventarioPeso obj =new  A1inventarioPeso();
+       AS5nventarioPeso1 obj =new  AS5nventarioPeso1();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jInsumosPesoActionPerformed
 
     private void jPropinasChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPropinasChefActionPerformed
-        ASpropinaChefSede obj =new  ASpropinaChefSede();
+        AS10propinaChefSede obj =new  AS10propinaChefSede();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPropinasChefActionPerformed

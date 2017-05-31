@@ -15,18 +15,15 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class AScamMayorPropinaSede extends javax.swing.JFrame {
+public class AS8camMayorPropinaSede extends javax.swing.JFrame {
     
 
     
-    public AScamMayorPropinaSede() {
+    public AS8camMayorPropinaSede() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
         setTitle("Camarero con mayor propina");
-        sede.setText("1");
-        
-        imprimirMenu();
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
@@ -45,7 +42,7 @@ public class AScamMayorPropinaSede extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AScamMayorPropinaSede.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AS8camMayorPropinaSede.class.getName()).log(Level.SEVERE, null, ex);
             }
             CallableStatement cStmt;
             cStmt = MySQL.conn.prepareCall("{call proc_propina_cam_sede_may(?)}");
@@ -73,7 +70,7 @@ public class AScamMayorPropinaSede extends javax.swing.JFrame {
             menu.setModel(modelo);
   
         } catch (SQLException ex) {
-            Logger.getLogger(AScamMayorPropinaSede.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AS8camMayorPropinaSede.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -276,7 +273,7 @@ public class AScamMayorPropinaSede extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AScamMayorPropinaSede().setVisible(true);
+                new AS8camMayorPropinaSede().setVisible(true);
             }
         });
     }
