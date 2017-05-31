@@ -10,16 +10,17 @@ package Interfaz;
  * @author dennis660
  */
 public class WFacturaRegistrada extends javax.swing.JFrame {
-
+    Rec3RegistrarFactura c;
     /**
      * Creates new form ConIncorrecto
      */
-    public WFacturaRegistrada() {
+    public WFacturaRegistrada(Rec3RegistrarFactura c) {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
         setTitle("Factura Registrada");
+        this.c=c;
     }
 
     /**
@@ -127,8 +128,13 @@ public class WFacturaRegistrada extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run(Rec3RegistrarFactura c) {
+                new WFacturaRegistrada(c).setVisible(true);
+            }
+
+            @Override
             public void run() {
-                new WFacturaRegistrada().setVisible(true);
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
     }
