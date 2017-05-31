@@ -19,11 +19,11 @@ import restaurante.*;
 import static restaurante.MySQL.conn;
 
 
-public class RecRegistrarFactura extends javax.swing.JFrame {
+public class Rec3RegistrarFactura extends javax.swing.JFrame {
 
 
     
-    public RecRegistrarFactura() {
+    public Rec3RegistrarFactura() {
         
         initComponents();
         setLocationRelativeTo(null); 
@@ -331,7 +331,7 @@ public class RecRegistrarFactura extends javax.swing.JFrame {
                 WPedidoNOAgregado obj =new WPedidoNOAgregado();
                 obj.setVisible(true);
                 
-                Logger.getLogger(RecRegistrarFactura.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(Rec3RegistrarFactura.class.getName()).log(Level.SEVERE, null, e);
                 System.out.println("no se hizo pedidos");
 
             }
@@ -398,7 +398,7 @@ public class RecRegistrarFactura extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RecRegistrarFactura().setVisible(true);
+                new Rec3RegistrarFactura().setVisible(true);
             }
         });
     }
