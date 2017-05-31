@@ -380,7 +380,7 @@ public class ASInicio extends javax.swing.JFrame {
         try {
             MySQL.conn.close();
         } catch (SQLException ex) {
-            Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Cli1menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
