@@ -240,7 +240,7 @@ public class Cam1AgregarPedido extends javax.swing.JFrame {
                 CallableStatement cStmt;
                 Class.forName("com.mysql.jdbc.Driver");
 
-                cStmt = MySQL.conn.prepareCall("{call proc_agregar_pedido(?,?,?,?)}");
+                cStmt = MySQL.conn.prepareCall("{call sp_realizar_pedido(?,?,?,?)}");
                 MySQL.conn.setAutoCommit(true);
 
                 cStmt.setInt(1, mesa);
