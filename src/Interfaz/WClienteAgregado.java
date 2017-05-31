@@ -9,17 +9,18 @@ package Interfaz;
  *
  * @author dennis660
  */
-public class WFacturaNORegistrada extends javax.swing.JFrame {
-
+public class WClienteAgregado extends javax.swing.JFrame {
+    Rec2InsertarCliente c;
     /**
      * Creates new form ConIncorrecto
      */
-    public WFacturaNORegistrada() {
+    public WClienteAgregado(Rec2InsertarCliente c) {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
-        setTitle("Factura Registrada");
+        setTitle("Pedido  Agregado");
+        this. c = c;
     }
 
     /**
@@ -42,7 +43,7 @@ public class WFacturaNORegistrada extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Factura No Registrada");
+        jLabel1.setText("Cliente agregado");
 
         jBOK.setBackground(new java.awt.Color(255, 255, 255));
         jBOK.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
@@ -93,9 +94,10 @@ public class WFacturaNORegistrada extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOKActionPerformed
-        Rec3RegistrarFactura obj2 =new  Rec3RegistrarFactura();
+        RecInicio obj2 =new  RecInicio();
             obj2.setVisible(true);
             dispose();
+            c.dispose();
     }//GEN-LAST:event_jBOKActionPerformed
 
     /**
@@ -127,8 +129,13 @@ public class WFacturaNORegistrada extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run(Rec2InsertarCliente c) {
+                new WClienteAgregado(c).setVisible(true);
+            }
+
+            @Override
             public void run() {
-                new WFacturaNORegistrada().setVisible(true);
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
     }

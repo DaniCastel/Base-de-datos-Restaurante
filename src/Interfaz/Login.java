@@ -165,7 +165,7 @@ public class Login extends javax.swing.JFrame {
             p.setVisible(true);
             dispose();
         }else if(usuario.equals("Cliente")){
-            Climenu p= new Climenu();
+            CliInicio p= new CliInicio();
             p.setVisible(true);
             dispose();
         }else if(usuario.equals("Chef")){

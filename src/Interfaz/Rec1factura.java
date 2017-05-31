@@ -14,11 +14,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class Rec3factura extends javax.swing.JFrame {
+public class Rec1factura extends javax.swing.JFrame {
     
 
     
-    public Rec3factura() {
+    public Rec1factura() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -43,7 +43,7 @@ public class Rec3factura extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Rec3factura.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Rec1factura.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             Statement st = MySQL.conn.createStatement();
@@ -65,7 +65,7 @@ public class Rec3factura extends javax.swing.JFrame {
             menu.setModel(modelo);
             MySQL.conn.close();
         } catch (SQLException ex) {
-            Logger.getLogger(Rec3factura.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Rec1factura.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -206,7 +206,7 @@ public class Rec3factura extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Rec3factura().setVisible(true);
+                new Rec1factura().setVisible(true);
             }
         });
     }

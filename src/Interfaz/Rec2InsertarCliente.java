@@ -19,11 +19,11 @@ import restaurante.*;
 import static restaurante.MySQL.conn;
 
 
-public class Rec1InsertarCliente extends javax.swing.JFrame {
+public class Rec2InsertarCliente extends javax.swing.JFrame {
 
 
     
-    public Rec1InsertarCliente() {
+    public Rec2InsertarCliente() {
         
         initComponents();
         setLocationRelativeTo(null); 
@@ -233,9 +233,12 @@ public class Rec1InsertarCliente extends javax.swing.JFrame {
           
              cStmt.execute();
              cStmt.close();
+             
+             WClienteAgregado p = new WClienteAgregado(this);
+             p.setVisible(true);
 
         }catch (Exception e) {  
-                     Logger.getLogger(Rec1InsertarCliente.class.getName()).log(Level.SEVERE, null, e);
+                     Logger.getLogger(Rec2InsertarCliente.class.getName()).log(Level.SEVERE, null, e);
 
         }
              
@@ -288,7 +291,7 @@ public class Rec1InsertarCliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Rec1InsertarCliente().setVisible(true);
+                new Rec2InsertarCliente().setVisible(true);
             }
         });
     }

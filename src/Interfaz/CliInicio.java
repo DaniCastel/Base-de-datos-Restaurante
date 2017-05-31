@@ -225,18 +225,18 @@ public class CliInicio extends javax.swing.JFrame {
         try {
             MySQL.conn.close();
         } catch (SQLException ex) {
-            Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Cli1menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
     private void jPlatoMasVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatoMasVendidoActionPerformed
-        AplatoMasVendido p= new AplatoMasVendido();
+        Cli2APlatoMasVendido p= new Cli2APlatoMasVendido();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPlatoMasVendidoActionPerformed
 
     private void jMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuActionPerformed
-        Climenu p= new Climenu();
+        Cli1menu p= new Cli1menu();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenuActionPerformed

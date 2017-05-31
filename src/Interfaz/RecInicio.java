@@ -203,7 +203,7 @@ public class RecInicio extends javax.swing.JFrame {
 
     private void jBVerFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVerFacturasActionPerformed
 
-            Rec1InsertarCliente p= new Rec1InsertarCliente();
+            Rec2InsertarCliente p= new Rec2InsertarCliente();
             p.setVisible(true);
             dispose();
        
@@ -217,24 +217,24 @@ public class RecInicio extends javax.swing.JFrame {
         try {
             MySQL.conn.close();
         } catch (SQLException ex) {
-            Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Cli1menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
     private void jBRegistrarFacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRegistrarFacActionPerformed
-        RecRegistrarFactura obj =new RecRegistrarFactura();
+        Rec3RegistrarFactura obj =new Rec3RegistrarFactura();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBRegistrarFacActionPerformed
 
     private void jBVerFacturas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVerFacturas1ActionPerformed
-        Rec3factura p= new Rec3factura();
+        Rec1factura p= new Rec1factura();
             p.setVisible(true);
             dispose();
     }//GEN-LAST:event_jBVerFacturas1ActionPerformed
 
     private void jBVerFacturas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVerFacturas2ActionPerformed
-        Rec2ListaClientes p= new Rec2ListaClientes();
+        Rec4ListaClientes p= new Rec4ListaClientes();
             p.setVisible(true);
             dispose();
     }//GEN-LAST:event_jBVerFacturas2ActionPerformed

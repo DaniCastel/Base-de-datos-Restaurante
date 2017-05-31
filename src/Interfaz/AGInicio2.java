@@ -331,7 +331,7 @@ public class AGInicio2 extends javax.swing.JFrame {
         try {
             MySQL.conn.close();
         } catch (SQLException ex) {
-            Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Cli1menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
@@ -354,7 +354,7 @@ public class AGInicio2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jBotonSiguienteActionPerformed
 
     private void jPlatoMasVendido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatoMasVendido1ActionPerformed
-        AplatoMasVendido obj =new AplatoMasVendido();
+        Cli2APlatoMasVendido obj =new Cli2APlatoMasVendido();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPlatoMasVendido1ActionPerformed

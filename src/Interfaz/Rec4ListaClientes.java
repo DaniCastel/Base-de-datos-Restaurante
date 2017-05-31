@@ -14,11 +14,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class Rec2ListaClientes extends javax.swing.JFrame {
+public class Rec4ListaClientes extends javax.swing.JFrame {
     
 
     
-    public Rec2ListaClientes() {
+    public Rec4ListaClientes() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -40,7 +40,7 @@ public class Rec2ListaClientes extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Rec2ListaClientes.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Rec4ListaClientes.class.getName()).log(Level.SEVERE, null, ex);
             }
     
             Statement st = MySQL.conn.createStatement();
@@ -62,7 +62,7 @@ public class Rec2ListaClientes extends javax.swing.JFrame {
             menu.setModel(modelo);
 
         } catch (SQLException ex) {
-            Logger.getLogger(Rec2ListaClientes.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Rec4ListaClientes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -172,7 +172,7 @@ public class Rec2ListaClientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        CliInicio obj =new  CliInicio();
+        RecInicio obj =new  RecInicio();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBotonVolverActionPerformed
@@ -209,7 +209,7 @@ public class Rec2ListaClientes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Rec2ListaClientes().setVisible(true);
+                new Rec4ListaClientes().setVisible(true);
             }
         });
     }

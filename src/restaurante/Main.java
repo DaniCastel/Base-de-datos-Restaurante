@@ -6,7 +6,7 @@
 package restaurante;
 
 import Interfaz.Login;
-import Interfaz.Climenu;
+import Interfaz.Cli1menu;
 
 /**
  *

@@ -222,7 +222,7 @@ public class AG3gananciaPorMetodoPago extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Cli1menu.class.getName()).log(Level.SEVERE, null, ex);
             }
            
             Statement st = MySQL.conn.createStatement();
@@ -244,7 +244,7 @@ public class AG3gananciaPorMetodoPago extends javax.swing.JFrame {
             menu.setModel(modelo);
 
         } catch (SQLException ex) {
-            Logger.getLogger(Climenu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Cli1menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_consultarActionPerformed
 
