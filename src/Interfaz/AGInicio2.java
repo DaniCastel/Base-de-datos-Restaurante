@@ -336,7 +336,7 @@ public class AGInicio2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
     private void jPlatosVendidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatosVendidosActionPerformed
-        AplatoMenosVendido p= new AplatoMenosVendido();
+        AG10PlatosVendidos p= new AG10PlatosVendidos();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPlatosVendidosActionPerformed
@@ -360,19 +360,21 @@ public class AGInicio2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jPlatoMasVendido1ActionPerformed
 
     private void jConsultarCantidadInsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConsultarCantidadInsActionPerformed
-        AGconsultarCantidad obj =new AGconsultarCantidad();
+        AG9consultarCantidad obj =new AG9consultarCantidad();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jConsultarCantidadInsActionPerformed
 
     private void jInsumosMenosGastadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsumosMenosGastadoActionPerformed
-        AGinsumoMenosGastado obj =new AGinsumoMenosGastado();
+        AG11insumoMenosGastado obj =new AG11insumoMenosGastado();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jInsumosMenosGastadoActionPerformed
 
     private void jPlatoMenosVendido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatoMenosVendido1ActionPerformed
-        // TODO add your handling code here:
+         AG12platoMenosVendido obj =new AG12platoMenosVendido();
+        obj.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jPlatoMenosVendido1ActionPerformed
 
     /**

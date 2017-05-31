@@ -18,9 +18,9 @@ import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 import static restaurante.MySQL.conn;
 
-public class AGconsultarCantidad extends javax.swing.JFrame {
+public class AG9consultarCantidad extends javax.swing.JFrame {
 
-    public AGconsultarCantidad() {
+    public AG9consultarCantidad() {
 
         initComponents();
         setLocationRelativeTo(null);
@@ -264,7 +264,7 @@ public class AGconsultarCantidad extends javax.swing.JFrame {
             resultado.setModel(modelo);
             cStmt.close();
         } catch (Exception e) {
-            Logger.getLogger(AGconsultarCantidad.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(AG9consultarCantidad.class.getName()).log(Level.SEVERE, null, e);
 
         }
 
@@ -317,7 +317,7 @@ public class AGconsultarCantidad extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AGconsultarCantidad().setVisible(true);
+                new AG9consultarCantidad().setVisible(true);
             }
         });
     }

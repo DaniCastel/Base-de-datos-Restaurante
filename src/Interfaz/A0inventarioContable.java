@@ -25,7 +25,7 @@ public class A0inventarioContable extends javax.swing.JFrame {
         setTitle("Inventario de insumos contables");
         imprimirMenu();
         
-        ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonSalir.png"));
+        ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
         jBotonVolver.setIcon(icono);
         

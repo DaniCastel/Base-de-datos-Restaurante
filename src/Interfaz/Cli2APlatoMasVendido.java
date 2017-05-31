@@ -179,7 +179,7 @@ public class Cli2APlatoMasVendido extends javax.swing.JFrame {
         obj.setVisible(true);
         dispose();
         }else{
-          AGInicio obj =new AGInicio();
+          AGInicio2 obj =new AGInicio2();
         obj.setVisible(true);
         dispose();  
         }
