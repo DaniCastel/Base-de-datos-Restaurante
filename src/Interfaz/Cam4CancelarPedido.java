@@ -20,9 +20,9 @@ import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 import static restaurante.MySQL.conn;
 
-public class Cam1CancelarPedido extends javax.swing.JFrame {
+public class Cam4CancelarPedido extends javax.swing.JFrame {
 
-    public Cam1CancelarPedido() {
+    public Cam4CancelarPedido() {
 
         initComponents();
         setLocationRelativeTo(null);
@@ -210,10 +210,13 @@ public class Cam1CancelarPedido extends javax.swing.JFrame {
                 WPedidoCancelado p = new WPedidoCancelado(this);
                 p.setVisible(true);
                 dispose();
-                
+            }else if(numero == 0){
+                WNOPedidoCancelado p = new WNOPedidoCancelado(this);
+                p.setVisible(true);
+                dispose();
             }
         } catch (Exception e) {
-            Logger.getLogger(Cam1CancelarPedido.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Cam4CancelarPedido.class.getName()).log(Level.SEVERE, null, e);
 
         }
 
@@ -256,7 +259,7 @@ public class Cam1CancelarPedido extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cam1CancelarPedido().setVisible(true);
+                new Cam4CancelarPedido().setVisible(true);
             }
         });
     }

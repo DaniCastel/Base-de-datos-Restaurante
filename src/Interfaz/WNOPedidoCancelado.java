@@ -9,18 +9,18 @@ package Interfaz;
  *
  * @author dennis660
  */
-public class WPedidoEntregado extends javax.swing.JFrame {
-    Cam3PedidosPendientes c;
+public class WNOPedidoCancelado extends javax.swing.JFrame {
+    Cam4CancelarPedido c;
     /**
      * Creates new form ConIncorrecto
      */
-    public WPedidoEntregado(Cam3PedidosPendientes c) {
+    public WNOPedidoCancelado( Cam4CancelarPedido c) {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
         setTitle("Pedido  Agregado");
-        this. c = c;
+        this.c = c;
     }
 
     /**
@@ -43,7 +43,7 @@ public class WPedidoEntregado extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Pedido Entregado");
+        jLabel1.setText("Pedido NO Cancelado");
 
         jBOK.setBackground(new java.awt.Color(255, 255, 255));
         jBOK.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
@@ -129,8 +129,8 @@ public class WPedidoEntregado extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run(Cam3PedidosPendientes c) {
-                new WPedidoEntregado(c).setVisible(true);
+            public void run( Cam4CancelarPedido c) {
+                new WNOPedidoCancelado(c).setVisible(true);
             }
 
             @Override

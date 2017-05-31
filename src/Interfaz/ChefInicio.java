@@ -187,7 +187,7 @@ public class ChefInicio extends javax.swing.JFrame {
     private void jBMisPropinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMisPropinasActionPerformed
          try{
             idChef = Integer.parseInt(jFChefId.getText());
-        Chef1PropinaslDia p= new Chef1PropinaslDia();
+        Chef2PropinaslDia p= new Chef2PropinaslDia();
         p.setVisible(true);
         dispose();
         }catch(Exception e){
@@ -203,7 +203,7 @@ public class ChefInicio extends javax.swing.JFrame {
     private void jBEnviarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEnviarPedidoActionPerformed
          try{
            idChef = Integer.parseInt(jFChefId.getText());
-        ChefPedidosPendientes p= new ChefPedidosPendientes();
+        Chef1PedidosPendientes p= new Chef1PedidosPendientes();
         p.setVisible(true);
         dispose();
         }catch(Exception e){

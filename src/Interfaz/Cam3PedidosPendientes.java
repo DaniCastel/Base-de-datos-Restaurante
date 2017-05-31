@@ -18,9 +18,9 @@ import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 import static restaurante.MySQL.conn;
 
-public class ChefPedidosPendientes extends javax.swing.JFrame {
+public class Cam3PedidosPendientes extends javax.swing.JFrame {
 
-    public ChefPedidosPendientes() {
+    public Cam3PedidosPendientes() {
 
         initComponents();
         setLocationRelativeTo(null);
@@ -41,10 +41,10 @@ public class ChefPedidosPendientes extends javax.swing.JFrame {
             CallableStatement cStmt;
             Class.forName("com.mysql.jdbc.Driver");
             
-            cStmt = MySQL.conn.prepareCall("{call pc_pedidos_chef(?)}");
+            cStmt = MySQL.conn.prepareCall("{call pc_pedidos_cam(?)}");
             MySQL.conn.setAutoCommit(true);
 
-            cStmt.setInt(1, ChefInicio.idChef);
+            cStmt.setInt(1, CamInicio.idCam);
 
             cStmt.execute();
             ResultSet rstb = cStmt.getResultSet();
@@ -65,7 +65,7 @@ public class ChefPedidosPendientes extends javax.swing.JFrame {
             cStmt.close();
             
         } catch (Exception e) {
-            Logger.getLogger(ChefPedidosPendientes.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Cam3PedidosPendientes.class.getName()).log(Level.SEVERE, null, e);
              System.out.println("no se hizo pedidos");
 
         }
@@ -85,7 +85,7 @@ public class ChefPedidosPendientes extends javax.swing.JFrame {
         jBotonVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jBEnviar = new javax.swing.JButton();
+        jBEntregar = new javax.swing.JButton();
         jMesa = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         resultado = new javax.swing.JTable();
@@ -141,24 +141,24 @@ public class ChefPedidosPendientes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 0, 0));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
-        jBEnviar.setBackground(new java.awt.Color(51, 51, 51));
-        jBEnviar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        jBEnviar.setForeground(new java.awt.Color(255, 255, 255));
-        jBEnviar.setText("Enviar");
-        jBEnviar.setBorderPainted(false);
-        jBEnviar.addActionListener(new java.awt.event.ActionListener() {
+        jBEntregar.setBackground(new java.awt.Color(51, 51, 51));
+        jBEntregar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        jBEntregar.setForeground(new java.awt.Color(255, 255, 255));
+        jBEntregar.setText("Entregado");
+        jBEntregar.setBorderPainted(false);
+        jBEntregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBEnviarActionPerformed(evt);
+                jBEntregarActionPerformed(evt);
             }
         });
 
         jMesa.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 24)); // NOI18N
         jMesa.setForeground(new java.awt.Color(255, 255, 255));
-        jMesa.setText("Pedidos pendientes por enviar");
+        jMesa.setText("Pedidos pendientes por entregar");
 
         resultado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -226,7 +226,7 @@ public class ChefPedidosPendientes extends javax.swing.JFrame {
                         .addGap(50, 50, 50)
                         .addComponent(jFMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(59, 59, 59)
-                        .addComponent(jBEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jBEntregar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(82, 82, 82))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -247,7 +247,7 @@ public class ChefPedidosPendientes extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(115, 115, 115)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBEntregar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFMesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jMesa1))
                 .addContainerGap(66, Short.MAX_VALUE))
@@ -267,7 +267,7 @@ public class ChefPedidosPendientes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEnviarActionPerformed
+    private void jBEntregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEntregarActionPerformed
         
         try {
             // Creamos la conexion  
@@ -276,15 +276,15 @@ public class ChefPedidosPendientes extends javax.swing.JFrame {
             CallableStatement cStmt;
             Class.forName("com.mysql.jdbc.Driver");
             
-            cStmt = MySQL.conn.prepareCall("{call pc_enviar_pedido(?,?)}");
+            cStmt = MySQL.conn.prepareCall("{call pc_entregar_pedido(?,?)}");
             MySQL.conn.setAutoCommit(true);
 
-            cStmt.setInt(1, ChefInicio.idChef);
+            cStmt.setInt(1, CamInicio.idCam);
             cStmt.setInt(2, mesa);
             cStmt.execute();
             cStmt.close();
             
-            WPedidoEntregado obj2 =new  WPedidoEntregado();
+            WPedidoEntregado obj2 =new  WPedidoEntregado(this);
             obj2.setVisible(true);
             
             
@@ -293,13 +293,13 @@ public class ChefPedidosPendientes extends javax.swing.JFrame {
             WPedidoNOEntregado obj2 =new  WPedidoNOEntregado();
             obj2.setVisible(true);
             
-            Logger.getLogger(ChefPedidosPendientes.class.getName()).log(Level.SEVERE, null, e);
-             System.out.println("no pedidos");
+            Logger.getLogger(Cam3PedidosPendientes.class.getName()).log(Level.SEVERE, null, e);
+             System.out.println("no se hizo pedidos");
 
         }
        
 
-    }//GEN-LAST:event_jBEnviarActionPerformed
+    }//GEN-LAST:event_jBEntregarActionPerformed
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
         CamInicio obj =new  CamInicio();
@@ -308,7 +308,7 @@ public class ChefPedidosPendientes extends javax.swing.JFrame {
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
     private void jBotonVolver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolver2ActionPerformed
-        ChefInicio obj =new  ChefInicio();
+        CamInicio obj =new  CamInicio();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBotonVolver2ActionPerformed
@@ -348,13 +348,13 @@ public class ChefPedidosPendientes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ChefPedidosPendientes().setVisible(true);
+                new Cam3PedidosPendientes().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBEnviar;
+    private javax.swing.JButton jBEntregar;
     private javax.swing.JButton jBotonVolver;
     private javax.swing.JButton jBotonVolver2;
     private javax.swing.JTextField jFMesa;

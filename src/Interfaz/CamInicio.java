@@ -234,7 +234,7 @@ public class CamInicio extends javax.swing.JFrame {
     private void jBMisPropinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMisPropinasActionPerformed
          try{
             idCam = Integer.parseInt(jFCamId.getText());
-        CamPropinaslDia p= new CamPropinaslDia();
+        Cam5PropinaslDia p= new Cam5PropinaslDia();
         p.setVisible(true);
         dispose();
         }catch(Exception e){
@@ -251,7 +251,7 @@ public class CamInicio extends javax.swing.JFrame {
         
         try{
             idCam = Integer.parseInt(jFCamId.getText());
-            CamAgregarPedido p= new CamAgregarPedido();
+            Cam1AgregarPedido p= new Cam1AgregarPedido();
             p.setVisible(true);
             dispose();
         }catch(Exception e){
@@ -276,7 +276,7 @@ public class CamInicio extends javax.swing.JFrame {
     private void jClientesAtendidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClientesAtendidosActionPerformed
         try{
            idCam = Integer.parseInt(jFCamId.getText());
-        CamClientesAtendidos p= new CamClientesAtendidos();
+        Cam2ClientesAtendidos p= new Cam2ClientesAtendidos();
         p.setVisible(true);
         dispose();
         }catch(Exception e){
@@ -287,13 +287,15 @@ public class CamInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jClientesAtendidosActionPerformed
 
     private void jCancelarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCancelarPedidoActionPerformed
-        Cam1CancelarPedido p= new Cam1CancelarPedido();
+        Cam4CancelarPedido p= new Cam4CancelarPedido();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jCancelarPedidoActionPerformed
 
     private void jBEntregarPedido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEntregarPedido1ActionPerformed
-        // TODO add your handling code here:
+        Cam3PedidosPendientes p= new Cam3PedidosPendientes();
+        p.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jBEntregarPedido1ActionPerformed
 
     /**

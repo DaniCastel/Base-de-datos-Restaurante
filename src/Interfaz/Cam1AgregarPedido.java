@@ -19,11 +19,11 @@ import restaurante.*;
 import static restaurante.MySQL.conn;
 
 
-public class CamAgregarPedido extends javax.swing.JFrame {
+public class Cam1AgregarPedido extends javax.swing.JFrame {
 
 
     
-    public CamAgregarPedido() {
+    public Cam1AgregarPedido() {
         
         initComponents();
         setLocationRelativeTo(null); 
@@ -312,7 +312,7 @@ public class CamAgregarPedido extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CamAgregarPedido().setVisible(true);
+                new Cam1AgregarPedido().setVisible(true);
             }
         });
     }

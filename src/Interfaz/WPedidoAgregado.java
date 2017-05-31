@@ -10,11 +10,11 @@ package Interfaz;
  * @author dennis660
  */
 public class WPedidoAgregado extends javax.swing.JFrame {
-    CamAgregarPedido c;
+    Cam1AgregarPedido c;
     /**
      * Creates new form ConIncorrecto
      */
-    public WPedidoAgregado(CamAgregarPedido c) {
+    public WPedidoAgregado(Cam1AgregarPedido c) {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -129,7 +129,7 @@ public class WPedidoAgregado extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run(CamAgregarPedido a) {
+            public void run(Cam1AgregarPedido a) {
                 new WPedidoAgregado(a).setVisible(true);
             }
 

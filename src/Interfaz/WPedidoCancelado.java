@@ -10,11 +10,11 @@ package Interfaz;
  * @author dennis660
  */
 public class WPedidoCancelado extends javax.swing.JFrame {
-    Cam1CancelarPedido c;
+    Cam4CancelarPedido c;
     /**
      * Creates new form ConIncorrecto
      */
-    public WPedidoCancelado( Cam1CancelarPedido c) {
+    public WPedidoCancelado( Cam4CancelarPedido c) {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -129,7 +129,7 @@ public class WPedidoCancelado extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run( Cam1CancelarPedido c) {
+            public void run( Cam4CancelarPedido c) {
                 new WPedidoCancelado(c).setVisible(true);
             }
 

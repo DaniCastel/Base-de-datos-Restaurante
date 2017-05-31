@@ -10,16 +10,17 @@ package Interfaz;
  * @author dennis660
  */
 public class WPedidoEnviado extends javax.swing.JFrame {
-
+    Chef1PedidosPendientes c;
     /**
      * Creates new form ConIncorrecto
      */
-    public WPedidoEnviado() {
+    public WPedidoEnviado(Chef1PedidosPendientes c) {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
         setTitle("Pedido  Agregado");
+        this.c = c;
     }
 
     /**
@@ -96,6 +97,7 @@ public class WPedidoEnviado extends javax.swing.JFrame {
         ChefInicio obj2 =new  ChefInicio();
             obj2.setVisible(true);
             dispose();
+            c.dispose();
     }//GEN-LAST:event_jBOKActionPerformed
 
     /**
@@ -127,8 +129,13 @@ public class WPedidoEnviado extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run(Chef1PedidosPendientes c) {
+                new WPedidoEnviado(c).setVisible(true);
+            }
+
+            @Override
             public void run() {
-                new WPedidoEnviado().setVisible(true);
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
     }
