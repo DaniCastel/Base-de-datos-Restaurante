@@ -259,7 +259,7 @@ public class AG4comprarInsumo extends javax.swing.JFrame {
              cStmt.execute();
              cStmt.close();
              
-             WCompraRealizada obj =new  WCompraRealizada();
+             WCompraRealizada obj =new  WCompraRealizada(this);
             obj.setVisible(true);
 
         }catch (Exception e) {  

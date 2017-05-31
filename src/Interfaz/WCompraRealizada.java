@@ -10,16 +10,17 @@ package Interfaz;
  * @author dennis660
  */
 public class WCompraRealizada extends javax.swing.JFrame {
-
+    AG4comprarInsumo c;
     /**
      * Creates new form ConIncorrecto
      */
-    public WCompraRealizada() {
+    public WCompraRealizada(AG4comprarInsumo c) {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE); 
         setTitle("Compra Realizada");
+        this.c = c;
     }
 
     /**
@@ -94,6 +95,7 @@ public class WCompraRealizada extends javax.swing.JFrame {
        AGInicio obj =new  AGInicio();
         obj.setVisible(true);
         dispose();
+        c.dispose();
     }//GEN-LAST:event_jOKActionPerformed
 
     /**
@@ -125,8 +127,13 @@ public class WCompraRealizada extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run(AG4comprarInsumo c) {
+                new WCompraRealizada(c).setVisible(true);
+            }
+
+            @Override
             public void run() {
-                new WCompraRealizada().setVisible(true);
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
     }
