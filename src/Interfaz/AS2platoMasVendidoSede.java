@@ -15,15 +15,15 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class AplatoMenosVendidoSede extends javax.swing.JFrame {
+public class AS2platoMasVendidoSede extends javax.swing.JFrame {
     
 
     
-    public AplatoMenosVendidoSede() {
+    public AS2platoMasVendidoSede() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
-        setTitle("Plato menos vendido-SEDE");
+        setTitle("Plato mas vendido");
         
         ImageIcon imagen = new ImageIcon(getClass().getResource("/Imagenes/BotonVolver2.png"));
         Icon icono= new ImageIcon(imagen.getImage().getScaledInstance(30,30,20));
@@ -41,17 +41,11 @@ public class AplatoMenosVendidoSede extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AplatoMenosVendidoSede.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AS2platoMasVendidoSede.class.getName()).log(Level.SEVERE, null, ex);
             }
 
             CallableStatement cStmt;
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AplatoMenosVendidoSede.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-            cStmt = MySQL.conn.prepareCall("{call proc_plato_menos_vendido_sede(?)}");
+            cStmt = MySQL.conn.prepareCall("{call proc_plato_mas_vendido_sede(?)}");
             MySQL.conn.setAutoCommit(true);
 
             cStmt.setInt(1, Integer.valueOf(str));
@@ -75,7 +69,7 @@ public class AplatoMenosVendidoSede extends javax.swing.JFrame {
             menu.setModel(modelo);
 
         } catch (SQLException ex) {
-            Logger.getLogger(AplatoMenosVendidoSede.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AS2platoMasVendidoSede.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -101,7 +95,7 @@ public class AplatoMenosVendidoSede extends javax.swing.JFrame {
         sede.setPreferredSize(new java.awt.Dimension(720, 400));
 
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 24)); // NOI18N
-        jLabel2.setText("Plato menos vendido en  la sede");
+        jLabel2.setText("Plato mas vendido en  la sede");
 
         menu.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 36)); // NOI18N
         menu.setModel(new javax.swing.table.DefaultTableModel(
@@ -141,7 +135,11 @@ public class AplatoMenosVendidoSede extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 24)); // NOI18N
         jLabel3.setText("Sede:");
 
+        consultar.setBackground(new java.awt.Color(0, 102, 102));
+        consultar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        consultar.setForeground(new java.awt.Color(255, 255, 255));
         consultar.setText("Consultar");
+        consultar.setBorderPainted(false);
         consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultarActionPerformed(evt);
@@ -180,8 +178,8 @@ public class AplatoMenosVendidoSede extends javax.swing.JFrame {
                         .addGap(4, 4, 4)
                         .addComponent(sedein, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53)
-                        .addComponent(consultar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
         sedeLayout.setVerticalGroup(
             sedeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,10 +194,10 @@ public class AplatoMenosVendidoSede extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(70, 70, 70)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(sedeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(consultar)
+                    .addComponent(consultar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sedein, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(64, 64, 64))
         );
@@ -219,11 +217,11 @@ public class AplatoMenosVendidoSede extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonVolverActionPerformed
-        
-          ASInicio obj =new ASInicio();
+     
+        ASInicio obj =new  ASInicio();
         obj.setVisible(true);
-        dispose();  
-        
+        dispose();
+       
         
         
     }//GEN-LAST:event_jBotonVolverActionPerformed
@@ -269,7 +267,7 @@ public class AplatoMenosVendidoSede extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AplatoMenosVendidoSede().setVisible(true);
+                new AS2platoMasVendidoSede().setVisible(true);
             }
         });
     }

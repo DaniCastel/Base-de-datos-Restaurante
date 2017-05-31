@@ -342,7 +342,7 @@ public class AGInicio2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jPlatosVendidosActionPerformed
 
     private void jInsumosContablesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsumosContablesActionPerformed
-       AGinventarioContable p= new AGinventarioContable();
+       A0inventarioContable p= new A0inventarioContable();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jInsumosContablesActionPerformed

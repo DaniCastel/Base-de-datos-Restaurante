@@ -17,9 +17,9 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class ASgananciaPromPFecha extends javax.swing.JFrame {
+public class AS1gananciaPromPFecha extends javax.swing.JFrame {
 
-    public ASgananciaPromPFecha() {
+    public AS1gananciaPromPFecha() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -41,14 +41,14 @@ public class ASgananciaPromPFecha extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ASgananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AS1gananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
             }
             PreparedStatement st = MySQL.conn.prepareStatement("select promedioGananciaPorDiaSede(" + date + ","+sed+ ")");
             ResultSet resultado = st.executeQuery();
             resultado.next();
             numero = resultado.getInt(1);
         } catch (SQLException ex) {
-            Logger.getLogger(ASgananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AS1gananciaPromPFecha.class.getName()).log(Level.SEVERE, null, ex);
         }
         return numero;
     }
@@ -262,7 +262,7 @@ public class ASgananciaPromPFecha extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ASgananciaPromPFecha().setVisible(true);
+                new AS1gananciaPromPFecha().setVisible(true);
             }
         });
     }

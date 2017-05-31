@@ -148,7 +148,6 @@ public class Login extends javax.swing.JFrame {
         
         try{
               Main.db.MySQLConnection(usuario, contrasena, "restaurante");
-
         if(usuario.equals("Camarero")){
              CamInicio p= new CamInicio();
         p.setVisible(true);
@@ -157,7 +156,7 @@ public class Login extends javax.swing.JFrame {
             AGInicio p= new AGInicio();
             p.setVisible(true);
             dispose();
-        }else if(usuario.equals("Admin_Sede")){
+        }else if(usuario.equals("Admin_sede")){
             ASInicio p= new ASInicio();
             p.setVisible(true);
             dispose();

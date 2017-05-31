@@ -70,7 +70,6 @@ public class ASInicio extends javax.swing.JFrame {
         jPlatoMenosVendido = new javax.swing.JButton();
         jPlatoMasVendido = new javax.swing.JButton();
         jAdminGral2 = new javax.swing.JLabel();
-        jComprasporFecha = new javax.swing.JButton();
         jAdminGral3 = new javax.swing.JLabel();
         jInsumosContables1 = new javax.swing.JButton();
         jInsumosPeso = new javax.swing.JButton();
@@ -226,16 +225,6 @@ public class ASInicio extends javax.swing.JFrame {
         jAdminGral2.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jAdminGral2.setText("Estadísticas");
 
-        jComprasporFecha.setBackground(new java.awt.Color(0, 102, 102));
-        jComprasporFecha.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 14)); // NOI18N
-        jComprasporFecha.setForeground(new java.awt.Color(255, 255, 255));
-        jComprasporFecha.setText("Compras por fecha");
-        jComprasporFecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComprasporFechaActionPerformed(evt);
-            }
-        });
-
         jAdminGral3.setFont(new java.awt.Font("Lucida Calligraphy", 0, 24)); // NOI18N
         jAdminGral3.setText("Insumos");
 
@@ -300,17 +289,16 @@ public class ASInicio extends javax.swing.JFrame {
                                         .addComponent(jInsumosContables1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(jChefMayorPropina, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPAdminGeneralLayout.createSequentialGroup()
-                                .addComponent(jBComprasFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPropinasChef, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPAdminGeneralLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jPlatoMenosVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(jComprasporFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jPropinasChef, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPAdminGeneralLayout.createSequentialGroup()
+                                        .addComponent(jPlatoMenosVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jBComprasFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(21, 21, 21)
+                                        .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(45, 45, 45))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPAdminGeneralLayout.createSequentialGroup()
                 .addGap(69, 69, 69)
@@ -350,12 +338,10 @@ public class ASInicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPlatoMenosVendido, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComprasporFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPropinasCam, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBComprasFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPAdminGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBComprasFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPropinasChef, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPropinasChef, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52))
         );
 
@@ -385,7 +371,7 @@ public class ASInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jBotonVolverActionPerformed
 
     private void jBComprasFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBComprasFechaActionPerformed
-        AScomprasPorFecha p= new AScomprasPorFecha();
+        AS4comprasPorFecha p= new AS4comprasPorFecha();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBComprasFechaActionPerformed
@@ -409,39 +395,33 @@ public class ASInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jChefMayorPropinaActionPerformed
 
     private void jBGananciaPromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGananciaPromedioActionPerformed
-        AG1gananciaPromPFecha p= new AG1gananciaPromPFecha();
+        AS1gananciaPromPFecha p= new AS1gananciaPromPFecha();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jBGananciaPromedioActionPerformed
 
     private void jPlatoMenosVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatoMenosVendidoActionPerformed
-        AplatoMenosVendidoSede p= new AplatoMenosVendidoSede();
+        AS3platoMenosVendidoSede p= new AS3platoMenosVendidoSede();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPlatoMenosVendidoActionPerformed
 
     private void jPlatoMasVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPlatoMasVendidoActionPerformed
-        AplatoMasVendidoSede p= new AplatoMasVendidoSede();
+        AS2platoMasVendidoSede p= new AS2platoMasVendidoSede();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_jPlatoMasVendidoActionPerformed
 
-    private void jComprasporFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComprasporFechaActionPerformed
-        AScomprasPorFecha p= new AScomprasPorFecha();
-        p.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jComprasporFechaActionPerformed
-
     private void jInsumosContables1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsumosContables1ActionPerformed
 
-        AGinventarioContable obj =new  AGinventarioContable();
+        A0inventarioContable obj =new  A0inventarioContable();
         obj.setVisible(true);
         dispose();
        
     }//GEN-LAST:event_jInsumosContables1ActionPerformed
 
     private void jInsumosPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInsumosPesoActionPerformed
-       AGinventarioPeso obj =new  AGinventarioPeso();
+       A1inventarioPeso obj =new  A1inventarioPeso();
         obj.setVisible(true);
         dispose();
     }//GEN-LAST:event_jInsumosPesoActionPerformed
@@ -499,7 +479,6 @@ public class ASInicio extends javax.swing.JFrame {
     private javax.swing.JButton jBotonVolver;
     private javax.swing.JButton jCamMayorPropina;
     private javax.swing.JButton jChefMayorPropina;
-    private javax.swing.JButton jComprasporFecha;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;

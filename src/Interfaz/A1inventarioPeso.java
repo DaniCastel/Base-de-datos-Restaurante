@@ -14,11 +14,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class AGinventarioPeso extends javax.swing.JFrame {
+public class A1inventarioPeso extends javax.swing.JFrame {
     
 
     
-    public AGinventarioPeso() {
+    public A1inventarioPeso() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -41,7 +41,7 @@ public class AGinventarioPeso extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AGinventarioPeso.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(A1inventarioPeso.class.getName()).log(Level.SEVERE, null, ex);
             }
            
             Statement st = MySQL.conn.createStatement();
@@ -63,7 +63,7 @@ public class AGinventarioPeso extends javax.swing.JFrame {
             menu.setModel(modelo);
    
         } catch (SQLException ex) {
-            Logger.getLogger(AGinventarioPeso.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(A1inventarioPeso.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @SuppressWarnings("unchecked")
@@ -206,7 +206,7 @@ public class AGinventarioPeso extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AGinventarioPeso.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(A1inventarioPeso.class.getName()).log(Level.SEVERE, null, ex);
             }
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/entregafinalbd", "root", "ragnarok3798");
             Statement st = con.createStatement();
@@ -228,7 +228,7 @@ public class AGinventarioPeso extends javax.swing.JFrame {
             menu.setModel(modelo);
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(AGinventarioPeso.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(A1inventarioPeso.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_consultarActionPerformed
 
@@ -280,7 +280,7 @@ public class AGinventarioPeso extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AGinventarioPeso().setVisible(true);
+                new A1inventarioPeso().setVisible(true);
             }
         });
     }

@@ -17,11 +17,11 @@ import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 import restaurante.*;
 
-public class AScomprasPorFecha extends javax.swing.JFrame {
+public class AS4comprasPorFecha extends javax.swing.JFrame {
     
 
     
-    public AScomprasPorFecha() {
+    public AS4comprasPorFecha() {
         initComponents();
         setLocationRelativeTo(null); 
         setResizable(false);
@@ -45,7 +45,7 @@ public class AScomprasPorFecha extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AScomprasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AS4comprasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
             }
        
             PreparedStatement st = MySQL.conn.prepareStatement("select contarCompraPorFecha('"+date+ "',"+ sde +")");
@@ -54,7 +54,7 @@ public class AScomprasPorFecha extends javax.swing.JFrame {
             numero = resultado.getInt(1);
 
         } catch (SQLException ex) {
-            Logger.getLogger(AScomprasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AS4comprasPorFecha.class.getName()).log(Level.SEVERE, null, ex);
         }
         return numero;
     }
@@ -83,7 +83,7 @@ public class AScomprasPorFecha extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(720, 400));
 
         jLabel2.setFont(new java.awt.Font("Copperplate Gothic Light", 1, 24)); // NOI18N
-        jLabel2.setText("Numero de compras de insumos por fecha y sede");
+        jLabel2.setText("Numero de compras de insumos ");
 
         fecha.setFont(new java.awt.Font("Lucida Calligraphy", 0, 18)); // NOI18N
         fecha.setText("Fecha (YYYY-MM-DD):");
@@ -157,7 +157,7 @@ public class AScomprasPorFecha extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(resultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(inputFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(inputFecha1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
+                            .addComponent(inputFecha1, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(38, 38, 38)
                         .addComponent(boton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -166,9 +166,9 @@ public class AScomprasPorFecha extends javax.swing.JFrame {
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addGap(137, 137, 137)
                         .addComponent(jLabel2)))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,16 +179,17 @@ public class AScomprasPorFecha extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jBotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel2)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(61, 61, 61)
+                        .addGap(42, 42, 42)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(fecha)
                             .addComponent(inputFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(25, 25, 25))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
                         .addComponent(boton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -205,7 +206,7 @@ public class AScomprasPorFecha extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,7 +269,7 @@ public class AScomprasPorFecha extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AScomprasPorFecha().setVisible(true);
+                new AS4comprasPorFecha().setVisible(true);
             }
         });
     }
